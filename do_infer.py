@@ -1,8 +1,8 @@
 import multiprocessing as mp
 from concurrent.futures import ProcessPoolExecutor
 
-import cupy as cp
 import numpy as np
+import cupy as cp
 import torch
 from pathlib import Path
 import time
