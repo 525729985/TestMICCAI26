@@ -93,7 +93,7 @@ def watershed_segmentation(mask, min_distance = 8):
         min_distance = min_distance,
         labels = mask,
     )
-    markers = np.zeros_like(mask, dtype = np.int32)
+    markers = cp.zeros_like(mask, dtype = cp.int32)
     markers[tuple(peaks.T)] = 1
     markers = label(markers)
     # seg = watershed(-distance, markers, mask = mask)
@@ -294,7 +294,6 @@ def main(input_dir, output_dir, verbose = False):
             write_seg(out_np, output_path, origin_props, is_reverse)
             if verbose:
                 print(f"{file.name} time {(time.time() - start_time):.2f}s")
-
 
 if __name__ == "__main__":
     main(

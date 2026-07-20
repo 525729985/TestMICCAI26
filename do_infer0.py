@@ -81,22 +81,21 @@ def resample_image(
     image.SetOrigin(new_origin)
     return image
 
-
 def watershed_segmentation(mask, min_distance = 8):
-    mask = cp.asarray(mask)
-    binary = mask > 0
-    distance = distance_transform_edt(binary)
+    mask = cp.asarray(mask, dtype = cp.uint8)
+    mask = mask > 0
+    distance = distance_transform_edt(mask)
 
     peaks = peak_local_max(
         distance,
         min_distance = min_distance,
-        labels = binary,
+        labels = mask,
     )
-    markers = np.zeros_like(binary, dtype = np.int32)
+    markers = cp.zeros_like(mask, dtype = cp.int32)
     markers[tuple(peaks.T)] = 1
     markers = label(markers)
-    # seg = watershed(-distance, markers, mask = binary)
-    seg = watershed(-distance.get(), markers.get(), mask = binary.get())
+    # seg = watershed(-distance, markers, mask = mask)
+    seg = watershed(-distance.get(), markers.get(), mask = mask.get())
 
     return seg.astype(np.int8)
 
@@ -287,7 +286,6 @@ def main(input_dir, output_dir, verbose = False):
         write_seg(out_np, output_path, origin_props, is_reverse)
         if verbose:
             print(f"{file.name} time {(time.time() - start_time):.2f}s")
-
 
 if __name__ == "__main__":
     main(

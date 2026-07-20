@@ -6,6 +6,7 @@ import numpy as np
 import torch
 from pathlib import Path
 import time
+import gc
 
 from batchgenerators.utilities.file_and_folder_operations import join
 from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
@@ -82,22 +83,21 @@ def resample_image(
     image.SetOrigin(new_origin)
     return image
 
-
 def watershed_segmentation(mask, min_distance = 8):
-    mask = cp.asarray(mask)
-    binary = mask > 0
-    distance = distance_transform_edt(binary)
+    mask = cp.asarray(mask, dtype = cp.uint8)
+    mask = mask > 0
+    distance = distance_transform_edt(mask)
 
     peaks = peak_local_max(
         distance,
         min_distance = min_distance,
-        labels = binary,
+        labels = mask,
     )
-    markers = np.zeros_like(binary, dtype = np.int32)
+    markers = cp.zeros_like(mask, dtype = cp.int32)
     markers[tuple(peaks.T)] = 1
     markers = label(markers)
-    # seg = watershed(-distance, markers, mask = binary)
-    seg = watershed(-distance.get(), markers.get(), mask = binary.get())
+    # seg = watershed(-distance, markers, mask = mask)
+    seg = watershed(-distance.get(), markers.get(), mask = mask.get())
 
     return seg.astype(np.int8)
 
@@ -219,39 +219,35 @@ def infer_by_predictor(predictor, img, props):
     result = predictor.predict_single_npy_array(img, props, None, None, False)
     return result
 
+def infer_step(input_path, output_path, predictor916, predictor821):
+    infer_spacing = (0.3, 0.3, 0.3)
+    img, props, is_reverse = read_image(input_path, infer_spacing)
+
+    ret916_np = infer_by_predictor(predictor916, img, props)
+
+    gc.collect()
+    torch.cuda.empty_cache()
+
+    watershed_np = watershed_segmentation(ret916_np)
+    ret821_np = infer_by_predictor(predictor821, img, props)
+
+    out_np = seg_by_water(ret916_np, ret821_np, watershed_np, is_mirror_pulp = not is_reverse)
+    write_seg(out_np, output_path, props, is_reverse)
+
 def main(input_dir, output_dir, verbose = False):
     input_dir = Path(input_dir)
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok = True, parents = True)
 
     predictor916, predictor821 = init_predictors()
-    infer_spacing = (0.3, 0.3, 0.3)
 
-    with ProcessPoolExecutor(max_workers = 2, mp_context = mp.get_context("spawn")) as pool:
-        for file in input_dir.glob("*.nii.gz"):
-            start_time = time.time()
-            input_path = str(file)
-            output_path = str(output_dir / file.name)
-            img, props, is_reverse = read_image(input_path, infer_spacing)
-
-            jobs = [
-                pool.submit(infer_by_predictor,
-                    predictor,
-                    img,
-                    props,
-                )
-                for predictor in [predictor916, predictor821]
-            ]
-            ret916_np = jobs[0].result()
-            watershed_job = pool.submit(watershed_segmentation, ret916_np)
-            watershed_np = watershed_job.result()
-            ret821_np = jobs[1].result()
-
-            out_np = seg_by_water(ret916_np, ret821_np, watershed_np, is_mirror_pulp = not is_reverse)
-            write_seg(out_np, output_path, props, is_reverse)
-            if verbose:
-                print(f"{file.name} time {(time.time() - start_time):.2f}s")
-
+    for file in input_dir.glob("*.nii.gz"):
+        start_time = time.time()
+        input_path = str(file)
+        output_path = str(output_dir / file.name)
+        infer_step(input_path, output_path, predictor916, predictor821)
+        if verbose:
+            print(f"{file.name} time {(time.time() - start_time):.2f}s")
 
 if __name__ == "__main__":
     main(
