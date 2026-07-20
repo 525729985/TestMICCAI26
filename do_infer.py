@@ -211,11 +211,6 @@ def init_predictors(cuda = 0):
         use_folds=(0,),
         checkpoint_name="checkpoint_final.pth",
     )
-    # predictor821.initialize_from_trained_model_folder(
-    #     join(nnUNet_results, "Dataset821_MICCAIUnlabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
-    #     use_folds = (0,),
-    #     checkpoint_name = "checkpoint_final.pth",
-    # )
     return predictor916, predictor821
 
 def infer_by_predictor(predictor, predictor_id, itk_image, uniform_infer_spacing):
