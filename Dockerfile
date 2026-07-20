@@ -59,7 +59,7 @@ COPY --chown=algorithm:algorithm do_infer.py /opt/algorithm/
 COPY --chown=algorithm:algorithm run_inference.py /opt/algorithm/
 COPY --chown=algorithm:algorithm predict.sh /opt/algorithm/
 
-COPY --chown=algorithm:algorithm ./nnUNet_results /opt/algorithm/nnUNet_results
+COPY --chown=algorithm:algorithm nnUNet_results /opt/algorithm/nnUNet_results
 ENV nnUNet_raw=/opt/algorithm/nnUNet_raw/
 ENV nnUNet_preprocessed=/opt/algorithm/nnUNet_preprocessed/
 ENV nnUNet_results=/opt/algorithm/nnUNet_results/
