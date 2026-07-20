@@ -31,14 +31,6 @@ def get_up_low_mapping():
     mapping.update({i: 4 for i in range(49, 65)})
     return mapping
 
-def crop_z_sitk(data_sitk, mask):
-    size = data_sitk.GetSize()
-    area_coord = np.nonzero(mask)
-    min_z = int(np.min(area_coord[0]))
-    max_z = int(np.max(area_coord[0]))
-    cropped_sitk = sitk.Extract(data_sitk, [size[0], size[1], max_z - min_z], [0, 0, min_z])
-    return cropped_sitk
-
 def process(image_path, label_path, output_image_dir, output_label_dir, up_low_mapping):
     image_sitk = sitk.ReadImage(image_path)
     image_np = sitk.GetArrayFromImage(image_sitk)
@@ -46,7 +38,6 @@ def process(image_path, label_path, output_image_dir, output_label_dir, up_low_m
     label_sitk = sitk.ReadImage(label_path)
     label_np = sitk.GetArrayFromImage(label_sitk)
 
-    # 标签只有牙齿没有神经在CT中处理成植入牙
     label_np_up_low = np.zeros_like(label_np, dtype = np.uint8)
     for org_id, new_id in up_low_mapping.items():
         label_np_up_low[label_np == org_id] = new_id
@@ -111,6 +102,8 @@ def main(input_dir, output_dir, processes = 8):
 if __name__ == "__main__":
     root = "/home/data2/xrs/nnUNet_raw/"
 
+    # Dataset 711 & 911
+    # For half-mouth cases labeled only with teeth and lacking pulp labels: set CT density value to 3500 to simulate implant teeth.
     input_dir = root + "Dataset611_MICCAILabeled"
     output_dir = root + "Dataset711_MICCAILabeled"
     main(input_dir, output_dir)

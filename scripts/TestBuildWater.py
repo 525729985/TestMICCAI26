@@ -88,13 +88,13 @@ if __name__ == "__main__":
     # ref = f"/home/data2/xrs/dataset/pred_out/pred_621/{type}{type_num2}"
     # main(input, output, ref, small_max_size = 3000, processes = 8)
 
-    # type_num1 = "1000"
-    # type_num2 = "1000"
-    #
-    # type = "Train-Unlabeled"
-    # input = f"/home/data2/xrs/dataset/pred_out/pred_916/{type}{type_num1}"
-    # output = f"/home/data2/xrs/dataset/pred_out/pred2/{type}{type_num1}_{type_num2}"
-    # ref = f"/home/data2/xrs/dataset/pred_out/pred_821/{type}{type_num2}"
-    # main(input, output, ref, small_max_size = 3000, processes = 8)
+    type_num1 = "1000"
+    type_num2 = "1000"
+
+    type = "Train-Unlabeled"
+    input = f"/home/data2/xrs/dataset/pred_out/pred_916/{type}{type_num1}"
+    output = f"/home/data2/xrs/dataset/pred_out/pred2/{type}{type_num1}_{type_num2}"
+    ref = f"/home/data2/xrs/dataset/pred_out/pred_821/{type}{type_num2}"
+    main(input, output, ref, small_max_size = 3000, processes = 8)
 
     print("ok")
