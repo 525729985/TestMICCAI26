@@ -1,21 +1,22 @@
-import multiprocessing as mp
-from concurrent.futures import ProcessPoolExecutor
+import multiprocessing
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 
-import cupy as cp
 import numpy as np
 import torch
 from pathlib import Path
 import time
+import gc
 
 from batchgenerators.utilities.file_and_folder_operations import join
 from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
 from nnunetv2.paths import nnUNet_results, nnUNet_raw
 import SimpleITK as sitk
 
-from cucim.core.operations.morphology import distance_transform_edt
-from cucim.skimage.feature import peak_local_max
-from cucim.skimage.measure import label
+from scipy.ndimage import distance_transform_edt
+
 from skimage.segmentation import watershed
+from skimage.feature import peak_local_max
+from skimage.measure import label
 
 
 def rotate_volume(volume):
@@ -47,7 +48,6 @@ def resample_image(
     target_size: tuple | None = None,
     is_label: bool = False,
 ) -> sitk.Image:
-
     original_size = input_image.GetSize()
     original_spacing = input_image.GetSpacing()
     original_origin = input_image.GetOrigin()
@@ -59,7 +59,7 @@ def resample_image(
             for i in range(len(original_size))
         )
 
-    print(f"resample_image spacing from {original_spacing} to {target_spacing} and size from {original_size} to {target_size}.")
+    # print(f"resample_image spacing from {original_spacing} to {target_spacing} and size from {original_size} to {target_size}.")
     resampler = sitk.ResampleImageFilter()
     resampler.SetOutputSpacing(target_spacing)
     resampler.SetSize(target_size)
@@ -84,7 +84,6 @@ def resample_image(
 
 
 def watershed_segmentation(mask, min_distance = 8):
-    mask = cp.asarray(mask)
     binary = mask > 0
     distance = distance_transform_edt(binary)
 
@@ -96,8 +95,7 @@ def watershed_segmentation(mask, min_distance = 8):
     markers = np.zeros_like(binary, dtype = np.int32)
     markers[tuple(peaks.T)] = 1
     markers = label(markers)
-    # seg = watershed(-distance, markers, mask = binary)
-    seg = watershed(-distance.get(), markers.get(), mask = binary.get())
+    seg = watershed(-distance, markers, mask = binary)
 
     return seg.astype(np.int8)
 
@@ -110,23 +108,51 @@ def get_pulp_id(tooth_id, is_mirror = False, pulp_diff = 32):
             pulp_id -= 8
     return pulp_id
 
-def seg_by_water(source_np, ref_np, watershed_np, is_mirror_pulp = False, count_bg = True):
+# def seg_by_water0(source_np, ref_np, is_mirror_pulp = False, count_bg = True):
+#     watershed_np = watershed_segmentation(source_np)
+#     labels = np.unique(watershed_np[watershed_np != 0])
+#     out_seg = np.zeros_like(source_np, dtype = np.uint8)
+#     count_mask = ref_np > 0
+#     for area_idx in labels:
+#         block_mask = watershed_np == area_idx
+#         if not count_bg:
+#             block_mask &= count_mask
+#         out_id = 0
+#         if block_mask.size > 0:
+#             ids, counts = np.unique(ref_np[block_mask], return_counts = True)
+#             out_id = ids[counts.argmax()]
+#         pulp_id = get_pulp_id(out_id, is_mirror = is_mirror_pulp)
+#         out_seg[block_mask] = np.where(source_np[block_mask] == 1, out_id, pulp_id)
+#     return out_seg
+
+def seg_area_by_water(source_np, ref_np, watershed_np, source_mask, is_mirror_pulp, count_bg, area_idx):
+    block_mask = watershed_np == area_idx
+    if not count_bg:
+        block_mask &= source_mask
+    out_id = 0
+    if block_mask.size > 0:
+        ids, counts = np.unique(ref_np[block_mask], return_counts = True)
+        out_id = ids[counts.argmax()]
+    pulp_id = get_pulp_id(out_id, is_mirror = is_mirror_pulp)
+    block_output = np.where(source_np[block_mask] == 1, out_id, pulp_id)
+    return block_mask, block_output
+
+def seg_by_water(pool, source_np, ref_np, watershed_np, is_mirror_pulp = False, count_bg = True):
     labels = np.unique(watershed_np[watershed_np != 0])
-    out_seg = np.zeros_like(source_np)
-    count_mask = ref_np > 0
-    for area_idx in labels:
-        block_mask = watershed_np == area_idx
-        if not count_bg:
-            block_mask &= count_mask
-        out_id = 0
-        if block_mask.size > 0:
-            ids, counts = np.unique(ref_np[block_mask], return_counts = True)
-            out_id = ids[counts.argmax()]
-        pulp_id = get_pulp_id(out_id, is_mirror = is_mirror_pulp)
-        out_seg[block_mask] = np.where(source_np[block_mask] == 1, out_id, pulp_id)
+    source_mask = ref_np > 0
+
+    jobs = [
+        pool.submit(seg_area_by_water, source_np, ref_np, watershed_np, source_mask, is_mirror_pulp, count_bg, area_idx)
+        for area_idx in labels
+    ]
+    out_results = [job.result() for job in jobs]
+
+    out_seg = np.zeros_like(source_np, dtype = np.uint8)
+    for block_mask, block_output in out_results:
+        out_seg[block_mask] = block_output
     return out_seg
 
-def read_image(file, target_spacing):
+def read_image(file):
     origin_itk = itk_image = sitk.ReadImage(file)
     original_size = itk_image.GetSize()
     original_spacing = itk_image.GetSpacing()
@@ -137,29 +163,26 @@ def read_image(file, target_spacing):
     itk_image = sitk.Cast(itk_image, sitk.sitkInt16)
     itk_image = sitk.Clamp(itk_image, upperBound = 5000)
 
-    use_resample = check_spacing(itk_image, target_spacing)
-    if use_resample:
-        itk_image = resample_image(itk_image, target_spacing)
+    # use_resample = check_spacing(itk_image, target_spacing)
+    # if use_resample:
+    #     itk_image = resample_image(itk_image, target_spacing)
     if is_reverse:
         itk_image = rotate_volume(itk_image)
-    img = sitk.GetArrayFromImage(itk_image)
-    img = img[np.newaxis, :]
 
     props = {
         "sitk_stuff": {
-            "use_resample": use_resample,
             "origin_itk": origin_itk,
             "spacing": original_spacing,
             "size": original_size,
             "origin": original_origin,
             "direction": original_direction,
         },
-        "spacing": target_spacing,
+        # "spacing": target_spacing,
     }
-    return img, props, is_reverse
+    return itk_image, props, is_reverse
 
 def write_seg(seg, output_name, properties, is_reverse):
-    itk_image = sitk.GetImageFromArray(seg.astype(np.uint8 if np.max(seg) < 255 else np.uint16, copy = False))
+    itk_image = sitk.GetImageFromArray(seg.astype(np.uint8, copy = False))
     if is_reverse:
         itk_image = rotate_volume(itk_image)
     origin_itk = properties["sitk_stuff"]["origin_itk"]
@@ -177,7 +200,7 @@ def write_seg(seg, output_name, properties, is_reverse):
             is_label = True,
         )
     itk_image.CopyInformation(origin_itk)
-    sitk.WriteImage(itk_image, output_name, True)
+    sitk.WriteImage(itk_image, output_name)
 
 def init_predictors(cuda = 0):
     predictor916 = nnUNetPredictor(
@@ -209,46 +232,88 @@ def init_predictors(cuda = 0):
         allow_tqdm = True,
     )
     predictor821.initialize_from_trained_model_folder(
-        join(nnUNet_results, "Dataset821_MICCAILabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
-        use_folds = (0,),
-        checkpoint_name = "checkpoint_final.pth",
+        join(nnUNet_results, "Dataset1121_MICCAILabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
+        use_folds=(0,),
+        checkpoint_name="checkpoint_final.pth",
     )
+    # predictor821.initialize_from_trained_model_folder(
+    #     join(nnUNet_results, "Dataset821_MICCAILabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
+    #     use_folds = (0,),
+    #     checkpoint_name = "checkpoint_final.pth",
+    # )
     return predictor916, predictor821
 
-def infer_by_predictor(predictor, img, props):
+def infer_by_predictor(predictor, predictor_idx, itk_image, uniform_infer_spacing):
+    infer_spacing_821 = (1.0, 1.0, 1.0)
+    original_size = itk_image.GetSize()
+    original_spacing = itk_image.GetSpacing()
+
+    infer_spacing = infer_spacing_821 if predictor_idx == 1 else uniform_infer_spacing
+    props = {
+        "spacing": infer_spacing,
+    }
+    use_resample = check_spacing(itk_image, infer_spacing)
+    if use_resample:
+        itk_image = resample_image(itk_image, infer_spacing)
+    img = sitk.GetArrayFromImage(itk_image)
+    img = img[np.newaxis, :]
+
     result = predictor.predict_single_npy_array(img, props, None, None, False)
-    return result
+
+    if predictor_idx == 1:
+        # resize 821 to a uniform infer size
+        target_size = tuple(
+            int(np.round(original_size[i] * original_spacing[i] / uniform_infer_spacing[i]))
+            for i in range(len(original_size))
+        )
+        itk_result = sitk.GetImageFromArray(result.astype(np.uint8))
+        itk_result.CopyInformation(itk_image)
+        itk_result = resample_image(
+            itk_result,
+            uniform_infer_spacing,
+            target_size = target_size,
+            is_label = True,
+        )
+        result = sitk.GetArrayFromImage(itk_result)
+
+    return result, use_resample
 
 def main(input_dir, output_dir, verbose = False):
     input_dir = Path(input_dir)
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok = True, parents = True)
 
-    predictor916, predictor821 = init_predictors()
+    predictors = init_predictors()
     infer_spacing = (0.3, 0.3, 0.3)
 
-    with ProcessPoolExecutor(max_workers = 2, mp_context = mp.get_context("spawn")) as pool:
+    multiprocessing.set_start_method("spawn")
+
+    with ProcessPoolExecutor(max_workers = 2) as pool:
         for file in input_dir.glob("*.nii.gz"):
             start_time = time.time()
             input_path = str(file)
             output_path = str(output_dir / file.name)
-            img, props, is_reverse = read_image(input_path, infer_spacing)
+            itk_image, origin_props, is_reverse = read_image(input_path)
 
             jobs = [
                 pool.submit(infer_by_predictor,
                     predictor,
-                    img,
-                    props,
+                    idx,
+                    itk_image,
+                    infer_spacing,
                 )
-                for predictor in [predictor916, predictor821]
+                for idx, predictor in enumerate(predictors)
             ]
-            ret916_np = jobs[0].result()
+            ret916_np, use_resample = jobs[0].result()
             watershed_job = pool.submit(watershed_segmentation, ret916_np)
             watershed_np = watershed_job.result()
-            ret821_np = jobs[1].result()
+            ret821_np, _ = jobs[1].result()
 
-            out_np = seg_by_water(ret916_np, ret821_np, watershed_np, is_mirror_pulp = not is_reverse)
-            write_seg(out_np, output_path, props, is_reverse)
+            out_np = seg_by_water(pool, ret916_np, ret821_np, watershed_np, is_mirror_pulp = not is_reverse)
+
+            origin_props["spacing"] = infer_spacing
+            origin_props["sitk_stuff"]["use_resample"] = use_resample
+            write_seg(out_np, output_path, origin_props, is_reverse)
             if verbose:
                 print(f"{file.name} time {(time.time() - start_time):.2f}s")
 

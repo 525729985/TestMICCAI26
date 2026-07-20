@@ -1,0 +1,396 @@
+
+#######################################################################
+Please cite the following paper when using nnU-Net:
+Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.
+#######################################################################
+ 
+2026-07-17 03:41:06.661572: Using torch.compile... 
+2026-07-17 03:41:11.348938: do_dummy_2d_data_aug: False 
+2026-07-17 03:41:11.349612: Using splits from existing split file: /home/data2/xrs/nnUNet_raw/nnUNet_preprocessed/Dataset1121_MICCAILabeled/splits_final.json 
+2026-07-17 03:41:11.349706: The split file contains 1 splits. 
+2026-07-17 03:41:11.349725: Desired fold for training: 0 
+2026-07-17 03:41:11.349747: This split has 299 training and 9 validation cases. 
+
+This is the configuration used by this training:
+Configuration name: 3d_new
+ {'data_identifier': 'nnUNetPlans_3d_fullres_resample_torch_ctnorm', 'preprocessor_name': 'DefaultPreprocessor', 'batch_size': 2, 'patch_size': [112, 128, 128], 'median_image_size_in_voxels': [100.0, 128.0, 128.0], 'spacing': [1.0, 1.0, 1.0], 'normalization_schemes': ['CTNormalization'], 'use_mask_for_norm': [False], 'resampling_fn_data': 'resample_torch_fornnunet', 'resampling_fn_seg': 'resample_torch_fornnunet', 'resampling_fn_data_kwargs': {'is_seg': False, 'force_separate_z': False, 'memefficient_seg_resampling': False}, 'resampling_fn_seg_kwargs': {'is_seg': True, 'force_separate_z': False, 'memefficient_seg_resampling': False}, 'resampling_fn_probabilities': 'resample_torch_fornnunet', 'resampling_fn_probabilities_kwargs': {'is_seg': False, 'force_separate_z': False, 'memefficient_seg_resampling': False}, 'architecture': {'network_class_name': 'dynamic_network_architectures.architectures.unet.PlainConvUNet', 'arch_kwargs': {'n_stages': 6, 'features_per_stage': [32, 64, 128, 256, 320, 320], 'conv_op': 'torch.nn.modules.conv.Conv3d', 'kernel_sizes': [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]], 'strides': [[1, 1, 1], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2], [1, 2, 2]], 'n_conv_per_stage': [2, 2, 2, 2, 2, 2], 'n_conv_per_stage_decoder': [2, 2, 2, 2, 2], 'conv_bias': True, 'norm_op': 'torch.nn.modules.instancenorm.InstanceNorm3d', 'norm_op_kwargs': {'eps': 1e-05, 'affine': True}, 'dropout_op': None, 'dropout_op_kwargs': None, 'nonlin': 'torch.nn.LeakyReLU', 'nonlin_kwargs': {'inplace': True}}, '_kw_requires_import': ['conv_op', 'norm_op', 'dropout_op', 'nonlin']}, 'batch_dice': False, 'inherits_from': '3d_fullres'} 
+ 
+These are the global plan.json settings:
+ {'dataset_name': 'Dataset1121_MICCAILabeled', 'plans_name': 'nnUNetPlans', 'original_median_spacing_after_transp': [1.0, 1.0, 1.0], 'original_median_shape_after_transp': [100, 128, 128], 'image_reader_writer': 'SimpleITKIO', 'transpose_forward': [0, 1, 2], 'transpose_backward': [0, 1, 2], 'experiment_planner_used': 'ExperimentPlanner', 'label_manager': 'LabelManager', 'foreground_intensity_properties_per_channel': {'0': {'max': 5000.0, 'mean': 1400.8280096590915, 'median': 1304.0, 'min': -1043.0, 'percentile_00_5': 47.0, 'percentile_99_5': 3975.0, 'std': 589.2913912653798}}} 
+ 
+2026-07-17 03:41:11.739756: Unable to plot network architecture: nnUNet_compile is enabled! 
+2026-07-17 03:41:11.745361:  
+2026-07-17 03:41:11.745441: Epoch 950 
+2026-07-17 03:41:11.745543: Current learning rate: 0.00067 
+2026-07-17 03:41:51.323359: train_loss -0.9435 
+2026-07-17 03:41:51.323529: val_loss -0.8923 
+2026-07-17 03:41:51.323679: Pseudo dice [np.float32(0.9585), np.float32(0.9508), np.float32(0.9356), np.float32(0.9346), np.float32(0.9476), np.float32(0.9393), np.float32(0.9606), np.float32(0.9602), np.float32(0.9602), np.float32(0.9546), np.float32(0.9582), np.float32(0.9571), np.float32(0.96), np.float32(0.9416), np.float32(0.9637), np.float32(0.9599), np.float32(0.9288), np.float32(0.9427), np.float32(0.9422), np.float32(0.9662), np.float32(0.9476), np.float32(0.895), np.float32(0.9102), np.float32(0.8518), np.float32(0.9347), np.float32(0.9416), np.float32(0.9073), np.float32(0.915), np.float32(0.9136), np.float32(0.969), np.float32(0.9488), np.float32(0.8277)] 
+2026-07-17 03:41:51.323802: Epoch time: 39.58 s 
+2026-07-17 03:41:52.018832:  
+2026-07-17 03:41:52.018928: Epoch 951 
+2026-07-17 03:41:52.019064: Current learning rate: 0.00066 
+2026-07-17 03:42:20.677516: train_loss -0.9478 
+2026-07-17 03:42:20.677645: val_loss -0.8861 
+2026-07-17 03:42:20.677781: Pseudo dice [np.float32(0.9567), np.float32(0.9584), np.float32(0.9489), np.float32(0.9361), np.float32(0.9425), np.float32(0.9321), np.float32(0.9582), np.float32(0.9628), np.float32(0.9616), np.float32(0.9569), np.float32(0.9578), np.float32(0.9575), np.float32(0.9644), np.float32(0.9502), np.float32(0.9649), np.float32(0.96), np.float32(0.9249), np.float32(0.9401), np.float32(0.9403), np.float32(0.9648), np.float32(0.9277), np.float32(0.8643), np.float32(0.8839), np.float32(0.8129), np.float32(0.9334), np.float32(0.9373), np.float32(0.8969), np.float32(0.8946), np.float32(0.8936), np.float32(0.9697), np.float32(0.9524), np.float32(0.8041)] 
+2026-07-17 03:42:20.677848: Epoch time: 28.66 s 
+2026-07-17 03:42:21.354429:  
+2026-07-17 03:42:21.354601: Epoch 952 
+2026-07-17 03:42:21.354681: Current learning rate: 0.00065 
+2026-07-17 03:42:50.057361: train_loss -0.9447 
+2026-07-17 03:42:50.057497: val_loss -0.8869 
+2026-07-17 03:42:50.057632: Pseudo dice [np.float32(0.9573), np.float32(0.9539), np.float32(0.9424), np.float32(0.9345), np.float32(0.9489), np.float32(0.9411), np.float32(0.9595), np.float32(0.9629), np.float32(0.9597), np.float32(0.9551), np.float32(0.9597), np.float32(0.9576), np.float32(0.9623), np.float32(0.9465), np.float32(0.9634), np.float32(0.9626), np.float32(0.9258), np.float32(0.9457), np.float32(0.9432), np.float32(0.9638), np.float32(0.9162), np.float32(0.85), np.float32(0.8746), np.float32(0.8052), np.float32(0.937), np.float32(0.9426), np.float32(0.9193), np.float32(0.8807), np.float32(0.8813), np.float32(0.9674), np.float32(0.951), np.float32(0.8311)] 
+2026-07-17 03:42:50.057696: Epoch time: 28.7 s 
+2026-07-17 03:42:50.724656:  
+2026-07-17 03:42:50.724786: Epoch 953 
+2026-07-17 03:42:50.724864: Current learning rate: 0.00064 
+2026-07-17 03:43:19.416214: train_loss -0.9449 
+2026-07-17 03:43:19.416332: val_loss -0.8889 
+2026-07-17 03:43:19.416464: Pseudo dice [np.float32(0.9566), np.float32(0.9561), np.float32(0.9404), np.float32(0.9341), np.float32(0.9458), np.float32(0.9439), np.float32(0.959), np.float32(0.9618), np.float32(0.9588), np.float32(0.9545), np.float32(0.9581), np.float32(0.956), np.float32(0.9624), np.float32(0.9476), np.float32(0.9642), np.float32(0.9608), np.float32(0.9244), np.float32(0.9461), np.float32(0.9435), np.float32(0.9639), np.float32(0.9199), np.float32(0.8681), np.float32(0.8875), np.float32(0.8001), np.float32(0.938), np.float32(0.9395), np.float32(0.9184), np.float32(0.893), np.float32(0.8927), np.float32(0.9703), np.float32(0.9553), np.float32(0.7928)] 
+2026-07-17 03:43:19.416534: Epoch time: 28.69 s 
+2026-07-17 03:43:20.092226:  
+2026-07-17 03:43:20.092364: Epoch 954 
+2026-07-17 03:43:20.092442: Current learning rate: 0.00063 
+2026-07-17 03:43:48.798943: train_loss -0.9437 
+2026-07-17 03:43:48.799077: val_loss -0.8987 
+2026-07-17 03:43:48.799208: Pseudo dice [np.float32(0.9579), np.float32(0.9585), np.float32(0.9423), np.float32(0.9362), np.float32(0.9446), np.float32(0.9469), np.float32(0.9578), np.float32(0.9577), np.float32(0.9622), np.float32(0.9553), np.float32(0.9582), np.float32(0.9564), np.float32(0.9633), np.float32(0.9515), np.float32(0.9622), np.float32(0.9554), np.float32(0.9236), np.float32(0.9458), np.float32(0.9454), np.float32(0.9655), np.float32(0.9146), np.float32(0.8662), np.float32(0.8839), np.float32(0.8313), np.float32(0.94), np.float32(0.9432), np.float32(0.9281), np.float32(0.8924), np.float32(0.8902), np.float32(0.9697), np.float32(0.9584), np.float32(0.8442)] 
+2026-07-17 03:43:48.799273: Epoch time: 28.71 s 
+2026-07-17 03:43:49.481633:  
+2026-07-17 03:43:49.481768: Epoch 955 
+2026-07-17 03:43:49.481846: Current learning rate: 0.00061 
+2026-07-17 03:44:18.208293: train_loss -0.9455 
+2026-07-17 03:44:18.208416: val_loss -0.9058 
+2026-07-17 03:44:18.208539: Pseudo dice [np.float32(0.9559), np.float32(0.9565), np.float32(0.9455), np.float32(0.9362), np.float32(0.9493), np.float32(0.9475), np.float32(0.956), np.float32(0.9657), np.float32(0.9587), np.float32(0.9532), np.float32(0.9584), np.float32(0.9558), np.float32(0.9616), np.float32(0.9549), np.float32(0.9637), np.float32(0.9615), np.float32(0.9252), np.float32(0.9463), np.float32(0.9495), np.float32(0.9646), np.float32(0.9329), np.float32(0.9286), np.float32(0.9165), np.float32(0.8193), np.float32(0.9367), np.float32(0.9443), np.float32(0.939), np.float32(0.9015), np.float32(0.9029), np.float32(0.9678), np.float32(0.9584), np.float32(0.8278)] 
+2026-07-17 03:44:18.208605: Epoch time: 28.73 s 
+2026-07-17 03:44:18.886003:  
+2026-07-17 03:44:18.886091: Epoch 956 
+2026-07-17 03:44:18.886203: Current learning rate: 0.0006 
+2026-07-17 03:44:47.607467: train_loss -0.9449 
+2026-07-17 03:44:47.607596: val_loss -0.8813 
+2026-07-17 03:44:47.607727: Pseudo dice [np.float32(0.9576), np.float32(0.9566), np.float32(0.952), np.float32(0.9316), np.float32(0.939), np.float32(0.9254), np.float32(0.9588), np.float32(0.9643), np.float32(0.9611), np.float32(0.9581), np.float32(0.9587), np.float32(0.9573), np.float32(0.9615), np.float32(0.9369), np.float32(0.9656), np.float32(0.9598), np.float32(0.9271), np.float32(0.9397), np.float32(0.9382), np.float32(0.9629), np.float32(0.9017), np.float32(0.9207), np.float32(0.9209), np.float32(0.8184), np.float32(0.9358), np.float32(0.9385), np.float32(0.8913), np.float32(0.8992), np.float32(0.8994), np.float32(0.9693), np.float32(0.9512), np.float32(0.8113)] 
+2026-07-17 03:44:47.607807: Epoch time: 28.72 s 
+2026-07-17 03:44:48.291500:  
+2026-07-17 03:44:48.291625: Epoch 957 
+2026-07-17 03:44:48.291701: Current learning rate: 0.00059 
+2026-07-17 03:45:17.013147: train_loss -0.9402 
+2026-07-17 03:45:17.013275: val_loss -0.9011 
+2026-07-17 03:45:17.013418: Pseudo dice [np.float32(0.958), np.float32(0.947), np.float32(0.9262), np.float32(0.941), np.float32(0.9454), np.float32(0.9443), np.float32(0.9595), np.float32(0.9642), np.float32(0.9611), np.float32(0.9557), np.float32(0.9572), np.float32(0.9551), np.float32(0.9614), np.float32(0.9476), np.float32(0.9657), np.float32(0.9626), np.float32(0.9288), np.float32(0.946), np.float32(0.9476), np.float32(0.9654), np.float32(0.9376), np.float32(0.9152), np.float32(0.9372), np.float32(0.8748), np.float32(0.9356), np.float32(0.9417), np.float32(0.9282), np.float32(0.9301), np.float32(0.9304), np.float32(0.9692), np.float32(0.9501), np.float32(0.8757)] 
+2026-07-17 03:45:17.013521: Epoch time: 28.72 s 
+2026-07-17 03:45:17.699465:  
+2026-07-17 03:45:17.699566: Epoch 958 
+2026-07-17 03:45:17.699646: Current learning rate: 0.00058 
+2026-07-17 03:45:46.425717: train_loss -0.9456 
+2026-07-17 03:45:46.425883: val_loss -0.8842 
+2026-07-17 03:45:46.426013: Pseudo dice [np.float32(0.9529), np.float32(0.9483), np.float32(0.9378), np.float32(0.928), np.float32(0.9409), np.float32(0.9377), np.float32(0.9542), np.float32(0.9654), np.float32(0.9583), np.float32(0.9538), np.float32(0.9567), np.float32(0.9545), np.float32(0.962), np.float32(0.9472), np.float32(0.9629), np.float32(0.9636), np.float32(0.9216), np.float32(0.9431), np.float32(0.9406), np.float32(0.9635), np.float32(0.9219), np.float32(0.8791), np.float32(0.9096), np.float32(0.7684), np.float32(0.9358), np.float32(0.9389), np.float32(0.9206), np.float32(0.8976), np.float32(0.9021), np.float32(0.9686), np.float32(0.9523), np.float32(0.7759)] 
+2026-07-17 03:45:46.426080: Epoch time: 28.73 s 
+2026-07-17 03:45:47.104635:  
+2026-07-17 03:45:47.104748: Epoch 959 
+2026-07-17 03:45:47.104868: Current learning rate: 0.00056 
+2026-07-17 03:46:15.843510: train_loss -0.9463 
+2026-07-17 03:46:15.843636: val_loss -0.8814 
+2026-07-17 03:46:15.843783: Pseudo dice [np.float32(0.9555), np.float32(0.9559), np.float32(0.949), np.float32(0.9278), np.float32(0.9439), np.float32(0.9425), np.float32(0.9574), np.float32(0.9624), np.float32(0.9625), np.float32(0.9581), np.float32(0.9607), np.float32(0.9581), np.float32(0.9625), np.float32(0.9477), np.float32(0.9652), np.float32(0.9609), np.float32(0.9242), np.float32(0.9439), np.float32(0.9407), np.float32(0.9615), np.float32(0.9093), np.float32(0.8517), np.float32(0.8869), np.float32(0.7787), np.float32(0.9395), np.float32(0.9397), np.float32(0.9208), np.float32(0.8812), np.float32(0.882), np.float32(0.968), np.float32(0.9556), np.float32(0.7868)] 
+2026-07-17 03:46:15.843894: Epoch time: 28.74 s 
+2026-07-17 03:46:16.522910:  
+2026-07-17 03:46:16.523094: Epoch 960 
+2026-07-17 03:46:16.523173: Current learning rate: 0.00055 
+2026-07-17 03:46:45.252727: train_loss -0.9453 
+2026-07-17 03:46:45.252855: val_loss -0.8833 
+2026-07-17 03:46:45.252983: Pseudo dice [np.float32(0.9543), np.float32(0.9512), np.float32(0.9379), np.float32(0.9299), np.float32(0.9436), np.float32(0.9363), np.float32(0.9557), np.float32(0.9642), np.float32(0.9588), np.float32(0.9545), np.float32(0.956), np.float32(0.9548), np.float32(0.9612), np.float32(0.9406), np.float32(0.9641), np.float32(0.9634), np.float32(0.926), np.float32(0.9427), np.float32(0.9388), np.float32(0.9634), np.float32(0.906), np.float32(0.8855), np.float32(0.9192), np.float32(0.8148), np.float32(0.9345), np.float32(0.9378), np.float32(0.9016), np.float32(0.9125), np.float32(0.9159), np.float32(0.9689), np.float32(0.9508), np.float32(0.8029)] 
+2026-07-17 03:46:45.253047: Epoch time: 28.73 s 
+2026-07-17 03:46:45.982461:  
+2026-07-17 03:46:45.982674: Epoch 961 
+2026-07-17 03:46:45.982761: Current learning rate: 0.00054 
+2026-07-17 03:47:14.690105: train_loss -0.945 
+2026-07-17 03:47:14.690227: val_loss -0.9005 
+2026-07-17 03:47:14.690357: Pseudo dice [np.float32(0.9547), np.float32(0.9513), np.float32(0.9296), np.float32(0.9355), np.float32(0.9492), np.float32(0.9444), np.float32(0.9576), np.float32(0.964), np.float32(0.9604), np.float32(0.955), np.float32(0.9581), np.float32(0.9547), np.float32(0.9628), np.float32(0.9533), np.float32(0.9656), np.float32(0.9615), np.float32(0.9273), np.float32(0.9453), np.float32(0.9474), np.float32(0.964), np.float32(0.9425), np.float32(0.9135), np.float32(0.9305), np.float32(0.8466), np.float32(0.9352), np.float32(0.9412), np.float32(0.9222), np.float32(0.9265), np.float32(0.9315), np.float32(0.9685), np.float32(0.9514), np.float32(0.8427)] 
+2026-07-17 03:47:14.690421: Epoch time: 28.71 s 
+2026-07-17 03:47:15.363076:  
+2026-07-17 03:47:15.363217: Epoch 962 
+2026-07-17 03:47:15.363296: Current learning rate: 0.00053 
+2026-07-17 03:47:44.075798: train_loss -0.9437 
+2026-07-17 03:47:44.075931: val_loss -0.8994 
+2026-07-17 03:47:44.076061: Pseudo dice [np.float32(0.9574), np.float32(0.955), np.float32(0.9394), np.float32(0.9413), np.float32(0.9513), np.float32(0.9513), np.float32(0.959), np.float32(0.9643), np.float32(0.962), np.float32(0.957), np.float32(0.9585), np.float32(0.9571), np.float32(0.9633), np.float32(0.9554), np.float32(0.9651), np.float32(0.96), np.float32(0.9272), np.float32(0.946), np.float32(0.9452), np.float32(0.9647), np.float32(0.9176), np.float32(0.8993), np.float32(0.8871), np.float32(0.8447), np.float32(0.9387), np.float32(0.9448), np.float32(0.9318), np.float32(0.882), np.float32(0.8819), np.float32(0.9689), np.float32(0.9518), np.float32(0.8716)] 
+2026-07-17 03:47:44.076126: Epoch time: 28.71 s 
+2026-07-17 03:47:44.752347:  
+2026-07-17 03:47:44.752438: Epoch 963 
+2026-07-17 03:47:44.752514: Current learning rate: 0.00051 
+2026-07-17 03:48:13.457338: train_loss -0.9423 
+2026-07-17 03:48:13.457488: val_loss -0.8937 
+2026-07-17 03:48:13.457616: Pseudo dice [np.float32(0.9575), np.float32(0.9485), np.float32(0.936), np.float32(0.9389), np.float32(0.9443), np.float32(0.9405), np.float32(0.96), np.float32(0.9642), np.float32(0.959), np.float32(0.9529), np.float32(0.9572), np.float32(0.9571), np.float32(0.9632), np.float32(0.9539), np.float32(0.9633), np.float32(0.9586), np.float32(0.9258), np.float32(0.9437), np.float32(0.9412), np.float32(0.9645), np.float32(0.9467), np.float32(0.9277), np.float32(0.9362), np.float32(0.8502), np.float32(0.9342), np.float32(0.9397), np.float32(0.9008), np.float32(0.9296), np.float32(0.9324), np.float32(0.9689), np.float32(0.9519), np.float32(0.8438)] 
+2026-07-17 03:48:13.457691: Epoch time: 28.71 s 
+2026-07-17 03:48:14.135690:  
+2026-07-17 03:48:14.135792: Epoch 964 
+2026-07-17 03:48:14.135869: Current learning rate: 0.0005 
+2026-07-17 03:48:42.873834: train_loss -0.9446 
+2026-07-17 03:48:42.873968: val_loss -0.9012 
+2026-07-17 03:48:42.874098: Pseudo dice [np.float32(0.9563), np.float32(0.951), np.float32(0.9318), np.float32(0.9387), np.float32(0.9513), np.float32(0.9521), np.float32(0.9585), np.float32(0.9622), np.float32(0.9618), np.float32(0.9573), np.float32(0.9565), np.float32(0.9547), np.float32(0.963), np.float32(0.9558), np.float32(0.9642), np.float32(0.9605), np.float32(0.9253), np.float32(0.9455), np.float32(0.9447), np.float32(0.9659), np.float32(0.919), np.float32(0.8876), np.float32(0.8743), np.float32(0.8355), np.float32(0.9379), np.float32(0.947), np.float32(0.9392), np.float32(0.8775), np.float32(0.8773), np.float32(0.9696), np.float32(0.9534), np.float32(0.8704)] 
+2026-07-17 03:48:42.874195: Epoch time: 28.74 s 
+2026-07-17 03:48:43.942783:  
+2026-07-17 03:48:43.942978: Epoch 965 
+2026-07-17 03:48:43.943059: Current learning rate: 0.00049 
+2026-07-17 03:49:12.667449: train_loss -0.9388 
+2026-07-17 03:49:12.667577: val_loss -0.8816 
+2026-07-17 03:49:12.667702: Pseudo dice [np.float32(0.9543), np.float32(0.9535), np.float32(0.9397), np.float32(0.9357), np.float32(0.9443), np.float32(0.9321), np.float32(0.9583), np.float32(0.9636), np.float32(0.9579), np.float32(0.9527), np.float32(0.9566), np.float32(0.9544), np.float32(0.9621), np.float32(0.9436), np.float32(0.9636), np.float32(0.9605), np.float32(0.9267), np.float32(0.9439), np.float32(0.9375), np.float32(0.9645), np.float32(0.8962), np.float32(0.8708), np.float32(0.8888), np.float32(0.8026), np.float32(0.9359), np.float32(0.9413), np.float32(0.9047), np.float32(0.8916), np.float32(0.8925), np.float32(0.9694), np.float32(0.9495), np.float32(0.816)] 
+2026-07-17 03:49:12.667778: Epoch time: 28.73 s 
+2026-07-17 03:49:13.339597:  
+2026-07-17 03:49:13.339719: Epoch 966 
+2026-07-17 03:49:13.339807: Current learning rate: 0.00048 
+2026-07-17 03:49:42.069357: train_loss -0.9488 
+2026-07-17 03:49:42.069487: val_loss -0.8918 
+2026-07-17 03:49:42.069618: Pseudo dice [np.float32(0.9565), np.float32(0.956), np.float32(0.9371), np.float32(0.9393), np.float32(0.948), np.float32(0.943), np.float32(0.96), np.float32(0.9626), np.float32(0.9588), np.float32(0.9523), np.float32(0.957), np.float32(0.9562), np.float32(0.9635), np.float32(0.9548), np.float32(0.9639), np.float32(0.9574), np.float32(0.9273), np.float32(0.9443), np.float32(0.935), np.float32(0.9641), np.float32(0.936), np.float32(0.8875), np.float32(0.8986), np.float32(0.825), np.float32(0.9315), np.float32(0.9399), np.float32(0.9035), np.float32(0.9062), np.float32(0.9089), np.float32(0.969), np.float32(0.9547), np.float32(0.8204)] 
+2026-07-17 03:49:42.069680: Epoch time: 28.73 s 
+2026-07-17 03:49:42.739952:  
+2026-07-17 03:49:42.740107: Epoch 967 
+2026-07-17 03:49:42.740185: Current learning rate: 0.00046 
+2026-07-17 03:50:11.445404: train_loss -0.9491 
+2026-07-17 03:50:11.445539: val_loss -0.8932 
+2026-07-17 03:50:11.445669: Pseudo dice [np.float32(0.9593), np.float32(0.9523), np.float32(0.9355), np.float32(0.9431), np.float32(0.9529), np.float32(0.9456), np.float32(0.9611), np.float32(0.9616), np.float32(0.96), np.float32(0.9565), np.float32(0.9606), np.float32(0.9577), np.float32(0.963), np.float32(0.9549), np.float32(0.9653), np.float32(0.9612), np.float32(0.9287), np.float32(0.9469), np.float32(0.9424), np.float32(0.9647), np.float32(0.9419), np.float32(0.8613), np.float32(0.8682), np.float32(0.8167), np.float32(0.9382), np.float32(0.9447), np.float32(0.9225), np.float32(0.8923), np.float32(0.8943), np.float32(0.9696), np.float32(0.9506), np.float32(0.8523)] 
+2026-07-17 03:50:11.445735: Epoch time: 28.71 s 
+2026-07-17 03:50:12.116870:  
+2026-07-17 03:50:12.117001: Epoch 968 
+2026-07-17 03:50:12.117083: Current learning rate: 0.00045 
+2026-07-17 03:50:40.832586: train_loss -0.9405 
+2026-07-17 03:50:40.832760: val_loss -0.8907 
+2026-07-17 03:50:40.832924: Pseudo dice [np.float32(0.9587), np.float32(0.9561), np.float32(0.9365), np.float32(0.9411), np.float32(0.951), np.float32(0.9403), np.float32(0.961), np.float32(0.9621), np.float32(0.9601), np.float32(0.9566), np.float32(0.9577), np.float32(0.9565), np.float32(0.9624), np.float32(0.9514), np.float32(0.9632), np.float32(0.9595), np.float32(0.9293), np.float32(0.9438), np.float32(0.9389), np.float32(0.9662), np.float32(0.939), np.float32(0.8556), np.float32(0.8609), np.float32(0.8116), np.float32(0.9373), np.float32(0.9399), np.float32(0.9049), np.float32(0.8873), np.float32(0.8881), np.float32(0.9682), np.float32(0.9514), np.float32(0.8534)] 
+2026-07-17 03:50:40.832991: Epoch time: 28.72 s 
+2026-07-17 03:50:41.520416:  
+2026-07-17 03:50:41.520549: Epoch 969 
+2026-07-17 03:50:41.520629: Current learning rate: 0.00044 
+2026-07-17 03:51:10.241819: train_loss -0.944 
+2026-07-17 03:51:10.241938: val_loss -0.887 
+2026-07-17 03:51:10.242062: Pseudo dice [np.float32(0.9564), np.float32(0.949), np.float32(0.9337), np.float32(0.9374), np.float32(0.951), np.float32(0.9441), np.float32(0.9587), np.float32(0.963), np.float32(0.9574), np.float32(0.9522), np.float32(0.9567), np.float32(0.9552), np.float32(0.9656), np.float32(0.9505), np.float32(0.9645), np.float32(0.9623), np.float32(0.926), np.float32(0.9455), np.float32(0.9417), np.float32(0.9644), np.float32(0.9357), np.float32(0.8455), np.float32(0.8621), np.float32(0.7844), np.float32(0.9383), np.float32(0.9412), np.float32(0.9173), np.float32(0.887), np.float32(0.8898), np.float32(0.9693), np.float32(0.9532), np.float32(0.8311)] 
+2026-07-17 03:51:10.242126: Epoch time: 28.72 s 
+2026-07-17 03:51:10.919667:  
+2026-07-17 03:51:10.919761: Epoch 970 
+2026-07-17 03:51:10.919836: Current learning rate: 0.00043 
+2026-07-17 03:51:39.645612: train_loss -0.9461 
+2026-07-17 03:51:39.645750: val_loss -0.8941 
+2026-07-17 03:51:39.645884: Pseudo dice [np.float32(0.9574), np.float32(0.9489), np.float32(0.9391), np.float32(0.9382), np.float32(0.946), np.float32(0.934), np.float32(0.9602), np.float32(0.9654), np.float32(0.9581), np.float32(0.955), np.float32(0.9579), np.float32(0.9575), np.float32(0.9613), np.float32(0.9443), np.float32(0.9657), np.float32(0.9627), np.float32(0.9298), np.float32(0.9426), np.float32(0.9431), np.float32(0.9653), np.float32(0.9497), np.float32(0.8851), np.float32(0.9105), np.float32(0.8391), np.float32(0.9342), np.float32(0.9412), np.float32(0.9028), np.float32(0.9242), np.float32(0.9248), np.float32(0.968), np.float32(0.9523), np.float32(0.8401)] 
+2026-07-17 03:51:39.645950: Epoch time: 28.73 s 
+2026-07-17 03:51:40.330181:  
+2026-07-17 03:51:40.330275: Epoch 971 
+2026-07-17 03:51:40.330353: Current learning rate: 0.00041 
+2026-07-17 03:52:09.046110: train_loss -0.9419 
+2026-07-17 03:52:09.046252: val_loss -0.8926 
+2026-07-17 03:52:09.046386: Pseudo dice [np.float32(0.9565), np.float32(0.9478), np.float32(0.944), np.float32(0.9336), np.float32(0.9453), np.float32(0.9373), np.float32(0.9571), np.float32(0.9622), np.float32(0.9601), np.float32(0.9574), np.float32(0.9588), np.float32(0.9587), np.float32(0.9594), np.float32(0.9434), np.float32(0.9654), np.float32(0.9629), np.float32(0.9267), np.float32(0.9396), np.float32(0.9441), np.float32(0.9642), np.float32(0.9533), np.float32(0.9069), np.float32(0.9361), np.float32(0.8415), np.float32(0.9318), np.float32(0.937), np.float32(0.9036), np.float32(0.9364), np.float32(0.9388), np.float32(0.9661), np.float32(0.953), np.float32(0.7955)] 
+2026-07-17 03:52:09.046453: Epoch time: 28.72 s 
+2026-07-17 03:52:09.733136:  
+2026-07-17 03:52:09.733229: Epoch 972 
+2026-07-17 03:52:09.733304: Current learning rate: 0.0004 
+2026-07-17 03:52:38.452220: train_loss -0.9419 
+2026-07-17 03:52:38.452350: val_loss -0.8918 
+2026-07-17 03:52:38.452485: Pseudo dice [np.float32(0.9559), np.float32(0.9481), np.float32(0.9302), np.float32(0.9365), np.float32(0.9467), np.float32(0.9444), np.float32(0.9575), np.float32(0.9666), np.float32(0.9586), np.float32(0.9546), np.float32(0.9555), np.float32(0.9544), np.float32(0.9615), np.float32(0.9491), np.float32(0.9632), np.float32(0.9634), np.float32(0.9284), np.float32(0.9461), np.float32(0.9449), np.float32(0.9651), np.float32(0.9277), np.float32(0.8502), np.float32(0.8679), np.float32(0.8075), np.float32(0.9369), np.float32(0.9421), np.float32(0.9277), np.float32(0.8845), np.float32(0.8857), np.float32(0.9696), np.float32(0.9498), np.float32(0.8554)] 
+2026-07-17 03:52:38.452609: Epoch time: 28.72 s 
+2026-07-17 03:52:39.129810:  
+2026-07-17 03:52:39.129903: Epoch 973 
+2026-07-17 03:52:39.129979: Current learning rate: 0.00039 
+2026-07-17 03:53:07.837155: train_loss -0.948 
+2026-07-17 03:53:07.837271: val_loss -0.8847 
+2026-07-17 03:53:07.837398: Pseudo dice [np.float32(0.9577), np.float32(0.9533), np.float32(0.947), np.float32(0.9321), np.float32(0.9449), np.float32(0.9398), np.float32(0.9584), np.float32(0.9651), np.float32(0.9635), np.float32(0.9598), np.float32(0.9603), np.float32(0.9592), np.float32(0.9621), np.float32(0.948), np.float32(0.9661), np.float32(0.9614), np.float32(0.9292), np.float32(0.9432), np.float32(0.9459), np.float32(0.9624), np.float32(0.9356), np.float32(0.8549), np.float32(0.8911), np.float32(0.8101), np.float32(0.9302), np.float32(0.9346), np.float32(0.9103), np.float32(0.9022), np.float32(0.9029), np.float32(0.9684), np.float32(0.9524), np.float32(0.8073)] 
+2026-07-17 03:53:07.837533: Epoch time: 28.71 s 
+2026-07-17 03:53:08.514987:  
+2026-07-17 03:53:08.515090: Epoch 974 
+2026-07-17 03:53:08.515166: Current learning rate: 0.00037 
+2026-07-17 03:53:37.268075: train_loss -0.9455 
+2026-07-17 03:53:37.268205: val_loss -0.8975 
+2026-07-17 03:53:37.268330: Pseudo dice [np.float32(0.9572), np.float32(0.9513), np.float32(0.9412), np.float32(0.9384), np.float32(0.9448), np.float32(0.9442), np.float32(0.9586), np.float32(0.9653), np.float32(0.9594), np.float32(0.9545), np.float32(0.9591), np.float32(0.9582), np.float32(0.9629), np.float32(0.9491), np.float32(0.9643), np.float32(0.9606), np.float32(0.9273), np.float32(0.9441), np.float32(0.9438), np.float32(0.9641), np.float32(0.9556), np.float32(0.9217), np.float32(0.9331), np.float32(0.8557), np.float32(0.934), np.float32(0.94), np.float32(0.9105), np.float32(0.9303), np.float32(0.9338), np.float32(0.969), np.float32(0.9517), np.float32(0.8385)] 
+2026-07-17 03:53:37.268398: Epoch time: 28.75 s 
+2026-07-17 03:53:37.950768:  
+2026-07-17 03:53:37.950893: Epoch 975 
+2026-07-17 03:53:37.950971: Current learning rate: 0.00036 
+2026-07-17 03:54:06.677915: train_loss -0.9484 
+2026-07-17 03:54:06.678038: val_loss -0.8751 
+2026-07-17 03:54:06.678164: Pseudo dice [np.float32(0.9562), np.float32(0.9465), np.float32(0.939), np.float32(0.9373), np.float32(0.9419), np.float32(0.933), np.float32(0.9602), np.float32(0.9646), np.float32(0.9596), np.float32(0.9569), np.float32(0.9579), np.float32(0.9576), np.float32(0.959), np.float32(0.9394), np.float32(0.9646), np.float32(0.9622), np.float32(0.9294), np.float32(0.9438), np.float32(0.9379), np.float32(0.9644), np.float32(0.9188), np.float32(0.8641), np.float32(0.8698), np.float32(0.8041), np.float32(0.9355), np.float32(0.9392), np.float32(0.9002), np.float32(0.8678), np.float32(0.869), np.float32(0.9687), np.float32(0.9467), np.float32(0.8334)] 
+2026-07-17 03:54:06.678227: Epoch time: 28.73 s 
+2026-07-17 03:54:07.350796:  
+2026-07-17 03:54:07.350909: Epoch 976 
+2026-07-17 03:54:07.350984: Current learning rate: 0.00035 
+2026-07-17 03:54:36.080943: train_loss -0.9478 
+2026-07-17 03:54:36.081065: val_loss -0.8757 
+2026-07-17 03:54:36.081191: Pseudo dice [np.float32(0.9557), np.float32(0.9535), np.float32(0.9413), np.float32(0.9354), np.float32(0.9389), np.float32(0.9297), np.float32(0.9584), np.float32(0.9634), np.float32(0.9573), np.float32(0.9504), np.float32(0.9547), np.float32(0.9555), np.float32(0.9622), np.float32(0.9363), np.float32(0.9628), np.float32(0.9598), np.float32(0.9276), np.float32(0.9426), np.float32(0.9343), np.float32(0.9646), np.float32(0.918), np.float32(0.8653), np.float32(0.884), np.float32(0.7941), np.float32(0.9334), np.float32(0.9362), np.float32(0.8823), np.float32(0.8908), np.float32(0.8918), np.float32(0.9701), np.float32(0.9502), np.float32(0.8014)] 
+2026-07-17 03:54:36.081266: Epoch time: 28.73 s 
+2026-07-17 03:54:36.760072:  
+2026-07-17 03:54:36.760317: Epoch 977 
+2026-07-17 03:54:36.760409: Current learning rate: 0.00034 
+2026-07-17 03:55:05.479254: train_loss -0.9441 
+2026-07-17 03:55:05.479379: val_loss -0.887 
+2026-07-17 03:55:05.479511: Pseudo dice [np.float32(0.9569), np.float32(0.9558), np.float32(0.943), np.float32(0.9381), np.float32(0.9436), np.float32(0.9401), np.float32(0.9588), np.float32(0.962), np.float32(0.96), np.float32(0.9541), np.float32(0.9565), np.float32(0.9576), np.float32(0.9632), np.float32(0.9509), np.float32(0.964), np.float32(0.9602), np.float32(0.9273), np.float32(0.9435), np.float32(0.9409), np.float32(0.9645), np.float32(0.9358), np.float32(0.8785), np.float32(0.8926), np.float32(0.8331), np.float32(0.9365), np.float32(0.9389), np.float32(0.8989), np.float32(0.9006), np.float32(0.9004), np.float32(0.9679), np.float32(0.9503), np.float32(0.8172)] 
+2026-07-17 03:55:05.479576: Epoch time: 28.72 s 
+2026-07-17 03:55:06.158763:  
+2026-07-17 03:55:06.158907: Epoch 978 
+2026-07-17 03:55:06.158984: Current learning rate: 0.00032 
+2026-07-17 03:55:34.871229: train_loss -0.9481 
+2026-07-17 03:55:34.871361: val_loss -0.9021 
+2026-07-17 03:55:34.871494: Pseudo dice [np.float32(0.9559), np.float32(0.9555), np.float32(0.9515), np.float32(0.9374), np.float32(0.9482), np.float32(0.9506), np.float32(0.9567), np.float32(0.9621), np.float32(0.96), np.float32(0.9555), np.float32(0.9576), np.float32(0.9582), np.float32(0.9627), np.float32(0.9569), np.float32(0.9643), np.float32(0.9592), np.float32(0.9271), np.float32(0.9428), np.float32(0.9456), np.float32(0.9643), np.float32(0.9509), np.float32(0.9392), np.float32(0.8957), np.float32(0.8284), np.float32(0.9345), np.float32(0.9414), np.float32(0.9234), np.float32(0.898), np.float32(0.8988), np.float32(0.9679), np.float32(0.9587), np.float32(0.8077)] 
+2026-07-17 03:55:34.871559: Epoch time: 28.71 s 
+2026-07-17 03:55:35.557972:  
+2026-07-17 03:55:35.558110: Epoch 979 
+2026-07-17 03:55:35.558186: Current learning rate: 0.00031 
+2026-07-17 03:56:04.673472: train_loss -0.9467 
+2026-07-17 03:56:04.673652: val_loss -0.8913 
+2026-07-17 03:56:04.673789: Pseudo dice [np.float32(0.9545), np.float32(0.9521), np.float32(0.9386), np.float32(0.941), np.float32(0.9484), np.float32(0.9428), np.float32(0.9573), np.float32(0.9668), np.float32(0.9587), np.float32(0.9534), np.float32(0.9565), np.float32(0.9563), np.float32(0.9614), np.float32(0.9472), np.float32(0.9651), np.float32(0.9635), np.float32(0.9287), np.float32(0.945), np.float32(0.9406), np.float32(0.964), np.float32(0.9503), np.float32(0.9249), np.float32(0.9091), np.float32(0.8244), np.float32(0.9358), np.float32(0.9382), np.float32(0.9086), np.float32(0.9073), np.float32(0.9113), np.float32(0.9679), np.float32(0.9517), np.float32(0.81)] 
+2026-07-17 03:56:04.673859: Epoch time: 29.12 s 
+2026-07-17 03:56:05.347355:  
+2026-07-17 03:56:05.347484: Epoch 980 
+2026-07-17 03:56:05.347596: Current learning rate: 0.0003 
+2026-07-17 03:56:34.084943: train_loss -0.9452 
+2026-07-17 03:56:34.085124: val_loss -0.8871 
+2026-07-17 03:56:34.085252: Pseudo dice [np.float32(0.956), np.float32(0.9503), np.float32(0.9321), np.float32(0.936), np.float32(0.9509), np.float32(0.9449), np.float32(0.9574), np.float32(0.965), np.float32(0.9594), np.float32(0.9542), np.float32(0.9582), np.float32(0.957), np.float32(0.9629), np.float32(0.9517), np.float32(0.964), np.float32(0.964), np.float32(0.928), np.float32(0.946), np.float32(0.9429), np.float32(0.9631), np.float32(0.947), np.float32(0.9048), np.float32(0.8912), np.float32(0.8039), np.float32(0.9373), np.float32(0.9421), np.float32(0.9159), np.float32(0.8942), np.float32(0.8954), np.float32(0.9687), np.float32(0.9481), np.float32(0.8096)] 
+2026-07-17 03:56:34.085314: Epoch time: 28.74 s 
+2026-07-17 03:56:34.759176:  
+2026-07-17 03:56:34.759304: Epoch 981 
+2026-07-17 03:56:34.759380: Current learning rate: 0.00028 
+2026-07-17 03:57:03.510760: train_loss -0.9455 
+2026-07-17 03:57:03.510917: val_loss -0.8932 
+2026-07-17 03:57:03.511047: Pseudo dice [np.float32(0.9558), np.float32(0.9497), np.float32(0.9297), np.float32(0.9427), np.float32(0.9482), np.float32(0.9459), np.float32(0.9594), np.float32(0.9648), np.float32(0.9577), np.float32(0.9514), np.float32(0.9551), np.float32(0.9547), np.float32(0.9628), np.float32(0.9491), np.float32(0.9634), np.float32(0.9613), np.float32(0.9278), np.float32(0.9464), np.float32(0.94), np.float32(0.9652), np.float32(0.9466), np.float32(0.9224), np.float32(0.891), np.float32(0.8357), np.float32(0.9375), np.float32(0.9412), np.float32(0.9156), np.float32(0.8939), np.float32(0.8943), np.float32(0.9694), np.float32(0.9505), np.float32(0.8459)] 
+2026-07-17 03:57:03.511113: Epoch time: 28.75 s 
+2026-07-17 03:57:04.195729:  
+2026-07-17 03:57:04.195946: Epoch 982 
+2026-07-17 03:57:04.196023: Current learning rate: 0.00027 
+2026-07-17 03:57:32.943197: train_loss -0.9443 
+2026-07-17 03:57:32.943327: val_loss -0.8882 
+2026-07-17 03:57:32.943448: Pseudo dice [np.float32(0.9569), np.float32(0.9442), np.float32(0.9183), np.float32(0.9446), np.float32(0.95), np.float32(0.9413), np.float32(0.9607), np.float32(0.9651), np.float32(0.9574), np.float32(0.9534), np.float32(0.9573), np.float32(0.9554), np.float32(0.9602), np.float32(0.9452), np.float32(0.9632), np.float32(0.9647), np.float32(0.9322), np.float32(0.9453), np.float32(0.9391), np.float32(0.9576), np.float32(0.9354), np.float32(0.9129), np.float32(0.8938), np.float32(0.8548), np.float32(0.934), np.float32(0.9415), np.float32(0.9041), np.float32(0.8966), np.float32(0.8972), np.float32(0.9683), np.float32(0.9429), np.float32(0.8619)] 
+2026-07-17 03:57:32.943545: Epoch time: 28.75 s 
+2026-07-17 03:57:33.624151:  
+2026-07-17 03:57:33.624252: Epoch 983 
+2026-07-17 03:57:33.624327: Current learning rate: 0.00026 
+2026-07-17 03:58:02.359021: train_loss -0.9436 
+2026-07-17 03:58:02.359141: val_loss -0.8965 
+2026-07-17 03:58:02.359265: Pseudo dice [np.float32(0.9578), np.float32(0.9515), np.float32(0.9395), np.float32(0.9398), np.float32(0.9487), np.float32(0.947), np.float32(0.959), np.float32(0.9644), np.float32(0.9624), np.float32(0.9572), np.float32(0.958), np.float32(0.9567), np.float32(0.9622), np.float32(0.95), np.float32(0.9644), np.float32(0.9609), np.float32(0.9278), np.float32(0.9428), np.float32(0.9457), np.float32(0.9604), np.float32(0.9405), np.float32(0.9134), np.float32(0.9131), np.float32(0.8418), np.float32(0.9353), np.float32(0.9435), np.float32(0.9186), np.float32(0.9155), np.float32(0.9158), np.float32(0.9682), np.float32(0.9535), np.float32(0.8318)] 
+2026-07-17 03:58:02.359369: Epoch time: 28.74 s 
+2026-07-17 03:58:03.039082:  
+2026-07-17 03:58:03.039180: Epoch 984 
+2026-07-17 03:58:03.039258: Current learning rate: 0.00024 
+2026-07-17 03:58:31.786315: train_loss -0.9489 
+2026-07-17 03:58:31.786439: val_loss -0.8965 
+2026-07-17 03:58:31.786616: Pseudo dice [np.float32(0.9547), np.float32(0.9499), np.float32(0.936), np.float32(0.9404), np.float32(0.947), np.float32(0.9443), np.float32(0.9571), np.float32(0.9633), np.float32(0.9587), np.float32(0.9538), np.float32(0.9558), np.float32(0.9552), np.float32(0.9602), np.float32(0.9469), np.float32(0.9622), np.float32(0.9609), np.float32(0.928), np.float32(0.9457), np.float32(0.944), np.float32(0.9619), np.float32(0.9314), np.float32(0.8953), np.float32(0.8922), np.float32(0.8386), np.float32(0.937), np.float32(0.944), np.float32(0.9252), np.float32(0.8955), np.float32(0.8958), np.float32(0.9677), np.float32(0.9507), np.float32(0.8639)] 
+2026-07-17 03:58:31.786686: Epoch time: 28.75 s 
+2026-07-17 03:58:32.468822:  
+2026-07-17 03:58:32.468919: Epoch 985 
+2026-07-17 03:58:32.468996: Current learning rate: 0.00023 
+2026-07-17 03:59:01.200000: train_loss -0.9447 
+2026-07-17 03:59:01.200170: val_loss -0.8912 
+2026-07-17 03:59:01.200309: Pseudo dice [np.float32(0.9545), np.float32(0.9497), np.float32(0.9397), np.float32(0.9354), np.float32(0.9478), np.float32(0.9432), np.float32(0.9577), np.float32(0.9622), np.float32(0.9612), np.float32(0.9555), np.float32(0.9568), np.float32(0.957), np.float32(0.9641), np.float32(0.949), np.float32(0.9642), np.float32(0.9612), np.float32(0.9255), np.float32(0.9428), np.float32(0.943), np.float32(0.9636), np.float32(0.9253), np.float32(0.8688), np.float32(0.8873), np.float32(0.8104), np.float32(0.937), np.float32(0.942), np.float32(0.9204), np.float32(0.8949), np.float32(0.8954), np.float32(0.9695), np.float32(0.9538), np.float32(0.8132)] 
+2026-07-17 03:59:01.200385: Epoch time: 28.73 s 
+2026-07-17 03:59:01.886369:  
+2026-07-17 03:59:01.886496: Epoch 986 
+2026-07-17 03:59:01.886575: Current learning rate: 0.00021 
+2026-07-17 03:59:30.612102: train_loss -0.9449 
+2026-07-17 03:59:30.612239: val_loss -0.887 
+2026-07-17 03:59:30.612375: Pseudo dice [np.float32(0.957), np.float32(0.9503), np.float32(0.9423), np.float32(0.9371), np.float32(0.9491), np.float32(0.9444), np.float32(0.9578), np.float32(0.963), np.float32(0.9611), np.float32(0.9547), np.float32(0.9576), np.float32(0.957), np.float32(0.9642), np.float32(0.9516), np.float32(0.9628), np.float32(0.9608), np.float32(0.9276), np.float32(0.9449), np.float32(0.9368), np.float32(0.9645), np.float32(0.9168), np.float32(0.8581), np.float32(0.8596), np.float32(0.8148), np.float32(0.9379), np.float32(0.9413), np.float32(0.9118), np.float32(0.8686), np.float32(0.8676), np.float32(0.9688), np.float32(0.9525), np.float32(0.8193)] 
+2026-07-17 03:59:30.612445: Epoch time: 28.73 s 
+2026-07-17 03:59:31.293854:  
+2026-07-17 03:59:31.294030: Epoch 987 
+2026-07-17 03:59:31.294108: Current learning rate: 0.0002 
+2026-07-17 04:00:00.021247: train_loss -0.9414 
+2026-07-17 04:00:00.021387: val_loss -0.8962 
+2026-07-17 04:00:00.021513: Pseudo dice [np.float32(0.9575), np.float32(0.9551), np.float32(0.9444), np.float32(0.9389), np.float32(0.9494), np.float32(0.952), np.float32(0.9591), np.float32(0.9647), np.float32(0.9617), np.float32(0.9553), np.float32(0.9591), np.float32(0.9565), np.float32(0.9637), np.float32(0.9538), np.float32(0.9627), np.float32(0.9583), np.float32(0.9263), np.float32(0.9463), np.float32(0.9427), np.float32(0.9648), np.float32(0.9309), np.float32(0.8871), np.float32(0.8673), np.float32(0.8182), np.float32(0.9394), np.float32(0.9447), np.float32(0.9261), np.float32(0.8797), np.float32(0.8783), np.float32(0.9683), np.float32(0.9544), np.float32(0.8396)] 
+2026-07-17 04:00:00.021578: Epoch time: 28.73 s 
+2026-07-17 04:00:00.707673:  
+2026-07-17 04:00:00.707822: Epoch 988 
+2026-07-17 04:00:00.707903: Current learning rate: 0.00019 
+2026-07-17 04:00:29.461382: train_loss -0.9434 
+2026-07-17 04:00:29.461506: val_loss -0.8878 
+2026-07-17 04:00:29.461637: Pseudo dice [np.float32(0.9571), np.float32(0.9544), np.float32(0.9368), np.float32(0.9409), np.float32(0.9459), np.float32(0.9421), np.float32(0.9599), np.float32(0.9615), np.float32(0.9605), np.float32(0.9545), np.float32(0.9564), np.float32(0.9559), np.float32(0.9629), np.float32(0.9453), np.float32(0.9631), np.float32(0.9589), np.float32(0.926), np.float32(0.9445), np.float32(0.9378), np.float32(0.9653), np.float32(0.927), np.float32(0.8748), np.float32(0.8712), np.float32(0.8274), np.float32(0.9371), np.float32(0.9423), np.float32(0.9053), np.float32(0.8785), np.float32(0.8776), np.float32(0.9696), np.float32(0.9523), np.float32(0.8436)] 
+2026-07-17 04:00:29.461703: Epoch time: 28.75 s 
+2026-07-17 04:00:30.148408:  
+2026-07-17 04:00:30.148528: Epoch 989 
+2026-07-17 04:00:30.148644: Current learning rate: 0.00017 
+2026-07-17 04:00:58.892350: train_loss -0.9413 
+2026-07-17 04:00:58.892500: val_loss -0.8884 
+2026-07-17 04:00:58.892625: Pseudo dice [np.float32(0.956), np.float32(0.9424), np.float32(0.9264), np.float32(0.9394), np.float32(0.9482), np.float32(0.945), np.float32(0.9585), np.float32(0.9636), np.float32(0.9603), np.float32(0.9546), np.float32(0.9578), np.float32(0.956), np.float32(0.964), np.float32(0.9474), np.float32(0.9642), np.float32(0.9627), np.float32(0.9277), np.float32(0.9466), np.float32(0.9435), np.float32(0.9641), np.float32(0.9363), np.float32(0.8706), np.float32(0.8878), np.float32(0.8245), np.float32(0.9375), np.float32(0.9421), np.float32(0.9208), np.float32(0.8951), np.float32(0.8969), np.float32(0.9707), np.float32(0.9479), np.float32(0.8482)] 
+2026-07-17 04:00:58.892699: Epoch time: 28.74 s 
+2026-07-17 04:00:59.571799:  
+2026-07-17 04:00:59.571995: Epoch 990 
+2026-07-17 04:00:59.572070: Current learning rate: 0.00016 
+2026-07-17 04:01:28.314263: train_loss -0.9448 
+2026-07-17 04:01:28.314417: val_loss -0.905 
+2026-07-17 04:01:28.314551: Pseudo dice [np.float32(0.9579), np.float32(0.9455), np.float32(0.9313), np.float32(0.9416), np.float32(0.9494), np.float32(0.9506), np.float32(0.9615), np.float32(0.963), np.float32(0.9592), np.float32(0.9542), np.float32(0.9572), np.float32(0.9565), np.float32(0.9629), np.float32(0.9501), np.float32(0.9652), np.float32(0.9611), np.float32(0.9271), np.float32(0.9472), np.float32(0.9483), np.float32(0.9659), np.float32(0.9468), np.float32(0.9117), np.float32(0.9152), np.float32(0.8522), np.float32(0.9366), np.float32(0.9454), np.float32(0.9309), np.float32(0.9167), np.float32(0.918), np.float32(0.9708), np.float32(0.9524), np.float32(0.8616)] 
+2026-07-17 04:01:28.314618: Epoch time: 28.74 s 
+2026-07-17 04:01:28.982969:  
+2026-07-17 04:01:28.983160: Epoch 991 
+2026-07-17 04:01:28.983247: Current learning rate: 0.00014 
+2026-07-17 04:01:57.721726: train_loss -0.9428 
+2026-07-17 04:01:57.721900: val_loss -0.8989 
+2026-07-17 04:01:57.722025: Pseudo dice [np.float32(0.9574), np.float32(0.9498), np.float32(0.9374), np.float32(0.9375), np.float32(0.9503), np.float32(0.9485), np.float32(0.9587), np.float32(0.9641), np.float32(0.9619), np.float32(0.956), np.float32(0.9592), np.float32(0.9582), np.float32(0.9627), np.float32(0.9515), np.float32(0.9652), np.float32(0.9627), np.float32(0.929), np.float32(0.9446), np.float32(0.9481), np.float32(0.9641), np.float32(0.9336), np.float32(0.8952), np.float32(0.8971), np.float32(0.8352), np.float32(0.9381), np.float32(0.9447), np.float32(0.9312), np.float32(0.9019), np.float32(0.9026), np.float32(0.9688), np.float32(0.9536), np.float32(0.8412)] 
+2026-07-17 04:01:57.722126: Epoch time: 28.74 s 
+2026-07-17 04:01:58.398778:  
+2026-07-17 04:01:58.398900: Epoch 992 
+2026-07-17 04:01:58.398979: Current learning rate: 0.00013 
+2026-07-17 04:02:27.126209: train_loss -0.9456 
+2026-07-17 04:02:27.126343: val_loss -0.8865 
+2026-07-17 04:02:27.126467: Pseudo dice [np.float32(0.9575), np.float32(0.946), np.float32(0.9297), np.float32(0.9414), np.float32(0.9449), np.float32(0.9417), np.float32(0.9592), np.float32(0.9618), np.float32(0.9616), np.float32(0.9549), np.float32(0.9579), np.float32(0.956), np.float32(0.9635), np.float32(0.9423), np.float32(0.964), np.float32(0.9588), np.float32(0.9296), np.float32(0.9456), np.float32(0.9405), np.float32(0.9654), np.float32(0.939), np.float32(0.905), np.float32(0.8955), np.float32(0.8577), np.float32(0.9372), np.float32(0.9423), np.float32(0.907), np.float32(0.8994), np.float32(0.8995), np.float32(0.9702), np.float32(0.9496), np.float32(0.8634)] 
+2026-07-17 04:02:27.126531: Epoch time: 28.73 s 
+2026-07-17 04:02:27.801288:  
+2026-07-17 04:02:27.801425: Epoch 993 
+2026-07-17 04:02:27.801505: Current learning rate: 0.00011 
+2026-07-17 04:02:56.539069: train_loss -0.9464 
+2026-07-17 04:02:56.539239: val_loss -0.8795 
+2026-07-17 04:02:56.539372: Pseudo dice [np.float32(0.9584), np.float32(0.9522), np.float32(0.9378), np.float32(0.9397), np.float32(0.9423), np.float32(0.9375), np.float32(0.9616), np.float32(0.9644), np.float32(0.9597), np.float32(0.9542), np.float32(0.958), np.float32(0.9564), np.float32(0.9599), np.float32(0.9398), np.float32(0.9633), np.float32(0.959), np.float32(0.9284), np.float32(0.9425), np.float32(0.9361), np.float32(0.9658), np.float32(0.9216), np.float32(0.9043), np.float32(0.8781), np.float32(0.8344), np.float32(0.9361), np.float32(0.9411), np.float32(0.891), np.float32(0.8799), np.float32(0.8778), np.float32(0.9703), np.float32(0.9489), np.float32(0.8418)] 
+2026-07-17 04:02:56.539447: Epoch time: 28.74 s 
+2026-07-17 04:02:57.640557:  
+2026-07-17 04:02:57.640664: Epoch 994 
+2026-07-17 04:02:57.640748: Current learning rate: 0.0001 
+2026-07-17 04:03:26.396345: train_loss -0.948 
+2026-07-17 04:03:26.396472: val_loss -0.8684 
+2026-07-17 04:03:26.396600: Pseudo dice [np.float32(0.954), np.float32(0.9498), np.float32(0.9373), np.float32(0.9333), np.float32(0.9406), np.float32(0.9338), np.float32(0.9572), np.float32(0.9648), np.float32(0.9584), np.float32(0.9526), np.float32(0.9561), np.float32(0.956), np.float32(0.9611), np.float32(0.936), np.float32(0.9638), np.float32(0.9626), np.float32(0.9276), np.float32(0.943), np.float32(0.9319), np.float32(0.9636), np.float32(0.9207), np.float32(0.8874), np.float32(0.8784), np.float32(0.777), np.float32(0.9344), np.float32(0.9365), np.float32(0.8838), np.float32(0.8794), np.float32(0.8812), np.float32(0.9691), np.float32(0.9492), np.float32(0.7813)] 
+2026-07-17 04:03:26.396663: Epoch time: 28.76 s 
+2026-07-17 04:03:27.077534:  
+2026-07-17 04:03:27.077637: Epoch 995 
+2026-07-17 04:03:27.077716: Current learning rate: 8e-05 
+2026-07-17 04:03:55.811045: train_loss -0.9459 
+2026-07-17 04:03:55.811209: val_loss -0.8996 
+2026-07-17 04:03:55.811338: Pseudo dice [np.float32(0.9568), np.float32(0.9397), np.float32(0.9263), np.float32(0.9428), np.float32(0.948), np.float32(0.9441), np.float32(0.9589), np.float32(0.9654), np.float32(0.9611), np.float32(0.9554), np.float32(0.9573), np.float32(0.9562), np.float32(0.9615), np.float32(0.9484), np.float32(0.9642), np.float32(0.9638), np.float32(0.9312), np.float32(0.9443), np.float32(0.9462), np.float32(0.9655), np.float32(0.9314), np.float32(0.9034), np.float32(0.8943), np.float32(0.8734), np.float32(0.9377), np.float32(0.9453), np.float32(0.9273), np.float32(0.8969), np.float32(0.8975), np.float32(0.9695), np.float32(0.9506), np.float32(0.8921)] 
+2026-07-17 04:03:55.811402: Epoch time: 28.73 s 
+2026-07-17 04:03:56.488371:  
+2026-07-17 04:03:56.488565: Epoch 996 
+2026-07-17 04:03:56.488646: Current learning rate: 7e-05 
+2026-07-17 04:04:25.219380: train_loss -0.9468 
+2026-07-17 04:04:25.219515: val_loss -0.8961 
+2026-07-17 04:04:25.219670: Pseudo dice [np.float32(0.9561), np.float32(0.9491), np.float32(0.9382), np.float32(0.9354), np.float32(0.9482), np.float32(0.9484), np.float32(0.9581), np.float32(0.9631), np.float32(0.963), np.float32(0.9572), np.float32(0.959), np.float32(0.9575), np.float32(0.9641), np.float32(0.9523), np.float32(0.9653), np.float32(0.9606), np.float32(0.9262), np.float32(0.9442), np.float32(0.9462), np.float32(0.9644), np.float32(0.941), np.float32(0.9112), np.float32(0.9109), np.float32(0.8263), np.float32(0.9365), np.float32(0.9417), np.float32(0.9224), np.float32(0.9119), np.float32(0.9136), np.float32(0.9692), np.float32(0.9521), np.float32(0.8254)] 
+2026-07-17 04:04:25.219748: Epoch time: 28.73 s 
+2026-07-17 04:04:25.904660:  
+2026-07-17 04:04:25.904814: Epoch 997 
+2026-07-17 04:04:25.904891: Current learning rate: 5e-05 
+2026-07-17 04:04:54.646789: train_loss -0.9444 
+2026-07-17 04:04:54.646952: val_loss -0.9004 
+2026-07-17 04:04:54.647083: Pseudo dice [np.float32(0.9575), np.float32(0.9543), np.float32(0.9462), np.float32(0.9374), np.float32(0.9494), np.float32(0.9499), np.float32(0.959), np.float32(0.9646), np.float32(0.9627), np.float32(0.9573), np.float32(0.9584), np.float32(0.9582), np.float32(0.963), np.float32(0.9534), np.float32(0.965), np.float32(0.9611), np.float32(0.926), np.float32(0.9447), np.float32(0.9479), np.float32(0.9652), np.float32(0.9347), np.float32(0.9008), np.float32(0.8874), np.float32(0.8264), np.float32(0.9376), np.float32(0.9456), np.float32(0.9332), np.float32(0.8929), np.float32(0.8918), np.float32(0.9691), np.float32(0.9554), np.float32(0.847)] 
+2026-07-17 04:04:54.647151: Epoch time: 28.74 s 
+2026-07-17 04:04:55.325773:  
+2026-07-17 04:04:55.325869: Epoch 998 
+2026-07-17 04:04:55.325946: Current learning rate: 4e-05 
+2026-07-17 04:05:24.050776: train_loss -0.9452 
+2026-07-17 04:05:24.050904: val_loss -0.9006 
+2026-07-17 04:05:24.051039: Pseudo dice [np.float32(0.9584), np.float32(0.9535), np.float32(0.9384), np.float32(0.9412), np.float32(0.9481), np.float32(0.9471), np.float32(0.9622), np.float32(0.963), np.float32(0.9598), np.float32(0.9545), np.float32(0.958), np.float32(0.9559), np.float32(0.9625), np.float32(0.9508), np.float32(0.9634), np.float32(0.957), np.float32(0.9268), np.float32(0.9463), np.float32(0.9448), np.float32(0.9657), np.float32(0.9445), np.float32(0.9154), np.float32(0.9089), np.float32(0.8403), np.float32(0.9366), np.float32(0.9449), np.float32(0.9175), np.float32(0.9104), np.float32(0.9109), np.float32(0.9702), np.float32(0.9525), np.float32(0.8603)] 
+2026-07-17 04:05:24.051101: Epoch time: 28.73 s 
+2026-07-17 04:05:24.730210:  
+2026-07-17 04:05:24.730311: Epoch 999 
+2026-07-17 04:05:24.730387: Current learning rate: 2e-05 
+2026-07-17 04:05:53.452188: train_loss -0.9465 
+2026-07-17 04:05:53.452320: val_loss -0.8911 
+2026-07-17 04:05:53.452443: Pseudo dice [np.float32(0.955), np.float32(0.9543), np.float32(0.9372), np.float32(0.9385), np.float32(0.9449), np.float32(0.942), np.float32(0.9575), np.float32(0.9632), np.float32(0.9593), np.float32(0.9526), np.float32(0.9549), np.float32(0.956), np.float32(0.9622), np.float32(0.9457), np.float32(0.963), np.float32(0.9604), np.float32(0.9267), np.float32(0.9445), np.float32(0.9388), np.float32(0.9648), np.float32(0.9296), np.float32(0.912), np.float32(0.9031), np.float32(0.8424), np.float32(0.9367), np.float32(0.9405), np.float32(0.905), np.float32(0.9051), np.float32(0.9055), np.float32(0.9696), np.float32(0.9517), np.float32(0.8399)] 
+2026-07-17 04:05:53.452511: Epoch time: 28.72 s 
+2026-07-17 04:05:54.504933: Training done. 
+2026-07-17 04:05:54.514568: Using splits from existing split file: /home/data2/xrs/nnUNet_raw/nnUNet_preprocessed/Dataset1121_MICCAILabeled/splits_final.json 
+2026-07-17 04:05:54.514704: The split file contains 1 splits. 
+2026-07-17 04:05:54.514723: Desired fold for training: 0 
+2026-07-17 04:05:54.514747: This split has 299 training and 9 validation cases. 
+2026-07-17 04:05:54.514814: predicting STS26_Train-Labeled_001 
+2026-07-17 04:05:54.522252: STS26_Train-Labeled_001, shape torch.Size([1, 83, 127, 127]), rank 0 
+2026-07-17 04:06:00.827492: predicting STS26_Train-Labeled_007 
+2026-07-17 04:06:00.835443: STS26_Train-Labeled_007, shape torch.Size([1, 68, 160, 160]), rank 0 
+2026-07-17 04:06:00.960649: predicting STS26_Train-Labeled_010 
+2026-07-17 04:06:00.977213: STS26_Train-Labeled_010, shape torch.Size([1, 132, 161, 161]), rank 0 
+2026-07-17 04:06:01.204395: predicting STS26_Train-Labeled_011 
+2026-07-17 04:06:01.216223: STS26_Train-Labeled_011, shape torch.Size([1, 132, 161, 161]), rank 0 
+2026-07-17 04:06:01.448577: predicting STS26_Train-Labeled_013 
+2026-07-17 04:06:01.460938: STS26_Train-Labeled_013, shape torch.Size([1, 100, 160, 160]), rank 0 
+2026-07-17 04:06:01.608094: predicting STS26_Train-Labeled_018 
+2026-07-17 04:06:01.621094: STS26_Train-Labeled_018, shape torch.Size([1, 132, 161, 161]), rank 0 
+2026-07-17 04:06:01.844316: predicting STS26_Train-Labeled_024 
+2026-07-17 04:06:01.849319: STS26_Train-Labeled_024, shape torch.Size([1, 51, 91, 105]), rank 0 
+2026-07-17 04:06:01.885102: predicting STS26_Train-Labeled_029 
+2026-07-17 04:06:01.889892: STS26_Train-Labeled_029, shape torch.Size([1, 51, 111, 111]), rank 0 
+2026-07-17 04:06:01.929476: predicting STS26_Train-Labeled_030 
+2026-07-17 04:06:01.933985: STS26_Train-Labeled_030, shape torch.Size([1, 50, 100, 114]), rank 0 
+2026-07-17 04:06:06.027148: Validation complete 
+2026-07-17 04:06:06.027217: Mean Validation Dice:  0.8801943118474712 

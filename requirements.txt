@@ -1,0 +1,23 @@
+# requirements.txt
+
+# ===================================================================
+# This file should list all Python packages required by your code
+# that are NOT already included in the base Docker image.
+# The base image (pytorch/pytorch:1.12.1-cuda11.3-cudnn8-devel) already includes:
+# - torch, torchvision, torchaudio
+# - numpy
+# - and many other common packages.
+#
+# You can check the pre-installed packages by running the base image interactively:
+# docker run -it --rm pytorch/pytorch:1.12.1-cuda11.3-cudnn8-devel pip list
+# ===================================================================
+
+# Please add your specific dependencies here.
+# For medical imaging, you might need:
+
+# It's a good practice to pin versions for reproducibility, e.g.:
+nnunetv2==2.6.4
+tqdm==4.67.3
+scikit-image==0.26.0
+simpleitk==2.5.5
+cucim-cu12==26.06.00

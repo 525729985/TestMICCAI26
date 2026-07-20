@@ -1,21 +1,21 @@
-import multiprocessing as mp
-from concurrent.futures import ProcessPoolExecutor
+import multiprocessing
 
-import cupy as cp
 import numpy as np
 import torch
 from pathlib import Path
 import time
+import gc
 
 from batchgenerators.utilities.file_and_folder_operations import join
 from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
 from nnunetv2.paths import nnUNet_results, nnUNet_raw
 import SimpleITK as sitk
 
-from cucim.core.operations.morphology import distance_transform_edt
-from cucim.skimage.feature import peak_local_max
-from cucim.skimage.measure import label
+from scipy.ndimage import distance_transform_edt
+
 from skimage.segmentation import watershed
+from skimage.feature import peak_local_max
+from skimage.measure import label
 
 
 def rotate_volume(volume):
@@ -84,7 +84,6 @@ def resample_image(
 
 
 def watershed_segmentation(mask, min_distance = 8):
-    mask = cp.asarray(mask)
     binary = mask > 0
     distance = distance_transform_edt(binary)
 
@@ -96,8 +95,7 @@ def watershed_segmentation(mask, min_distance = 8):
     markers = np.zeros_like(binary, dtype = np.int32)
     markers[tuple(peaks.T)] = 1
     markers = label(markers)
-    # seg = watershed(-distance, markers, mask = binary)
-    seg = watershed(-distance.get(), markers.get(), mask = binary.get())
+    seg = watershed(-distance, markers, mask = binary)
 
     return seg.astype(np.int8)
 
@@ -227,7 +225,8 @@ def main(input_dir, output_dir, verbose = False):
     predictor916, predictor821 = init_predictors()
     infer_spacing = (0.3, 0.3, 0.3)
 
-    with ProcessPoolExecutor(max_workers = 2, mp_context = mp.get_context("spawn")) as pool:
+    multiprocessing.set_start_method("spawn")
+    with multiprocessing.Pool(processes = 2) as pool:
         for file in input_dir.glob("*.nii.gz"):
             start_time = time.time()
             input_path = str(file)
@@ -235,17 +234,17 @@ def main(input_dir, output_dir, verbose = False):
             img, props, is_reverse = read_image(input_path, infer_spacing)
 
             jobs = [
-                pool.submit(infer_by_predictor,
+                pool.apply_async(infer_by_predictor, args = [
                     predictor,
                     img,
                     props,
-                )
+                ])
                 for predictor in [predictor916, predictor821]
             ]
-            ret916_np = jobs[0].result()
-            watershed_job = pool.submit(watershed_segmentation, ret916_np)
-            watershed_np = watershed_job.result()
-            ret821_np = jobs[1].result()
+            ret916_np = jobs[0].get()
+            watershed_job = pool.apply_async(watershed_segmentation, args = [ret916_np])
+            watershed_np = watershed_job.get()
+            ret821_np = jobs[1].get()
 
             out_np = seg_by_water(ret916_np, ret821_np, watershed_np, is_mirror_pulp = not is_reverse)
             write_seg(out_np, output_path, props, is_reverse)

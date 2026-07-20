@@ -1,0 +1,1739 @@
+{
+    "file_ending": ".nii.gz",
+    "name": "Dataset821_MICCAILabeled",
+    "labels": {
+        "background": 0,
+        "Upper Right Central Incisor": 1,
+        "Upper Right Lateral Incisor": 2,
+        "Upper Right Canine": 3,
+        "Upper Right First Premolar": 4,
+        "Upper Right Second Premolar": 5,
+        "Upper Right First Molar": 6,
+        "Upper Right Second Molar": 7,
+        "Upper Right Third Molar (Wisdom Tooth)": 8,
+        "Upper Left Central Incisor": 9,
+        "Upper Left Lateral Incisor": 10,
+        "Upper Left Canine": 11,
+        "Upper Left First Premolar": 12,
+        "Upper Left Second Premolar": 13,
+        "Upper Left First Molar": 14,
+        "Upper Left Second Molar": 15,
+        "Upper Left Third Molar (Wisdom Tooth)": 16,
+        "Lower Left Central Incisor": 17,
+        "Lower Left Lateral Incisor": 18,
+        "Lower Left Canine": 19,
+        "Lower Left First Premolar": 20,
+        "Lower Left Second Premolar": 21,
+        "Lower Left First Molar": 22,
+        "Lower Left Second Molar": 23,
+        "Lower Left Third Molar (Wisdom Tooth)": 24,
+        "Lower Right Central Incisor": 25,
+        "Lower Right Lateral Incisor": 26,
+        "Lower Right Canine": 27,
+        "Lower Right First Premolar": 28,
+        "Lower Right Second Premolar": 29,
+        "Lower Right First Molar": 30,
+        "Lower Right Second Molar": 31,
+        "Lower Right Third Molar (Wisdom Tooth)": 32,
+        "Upper Right Central Incisor Pulp": 1,
+        "Upper Right Lateral Incisor Pulp": 2,
+        "Upper Right Canine Pulp": 3,
+        "Upper Right First Premolar Pulp": 4,
+        "Upper Right Second Premolar Pulp": 5,
+        "Upper Right First Molar Pulp": 6,
+        "Upper Right Second Molar Pulp": 7,
+        "Upper Right Third Molar (Wisdom Tooth) Pulp": 8,
+        "Upper Left Central Incisor Pulp": 9,
+        "Upper Left Lateral Incisor Pulp": 10,
+        "Upper Left Canine Pulp": 11,
+        "Upper Left First Premolar Pulp": 12,
+        "Upper Left Second Premolar Pulp": 13,
+        "Upper Left First Molar Pulp": 14,
+        "Upper Left Second Molar Pulp": 15,
+        "Upper Left Third Molar (Wisdom Tooth) Pulp": 16,
+        "Lower Left Central Incisor Pulp": 17,
+        "Lower Left Lateral Incisor Pulp": 18,
+        "Lower Left Canine Pulp": 19,
+        "Lower Left First Premolar Pulp": 20,
+        "Lower Left Second Premolar Pulp": 21,
+        "Lower Left First Molar Pulp": 22,
+        "Lower Left Second Molar Pulp": 23,
+        "Lower Left Third Molar (Wisdom Tooth) Pulp": 24,
+        "Lower Right Central Incisor Pulp": 25,
+        "Lower Right Lateral Incisor Pulp": 26,
+        "Lower Right Canine Pulp": 27,
+        "Lower Right First Premolar Pulp": 28,
+        "Lower Right Second Premolar Pulp": 29,
+        "Lower Right First Molar Pulp": 30,
+        "Lower Right Second Molar Pulp": 31,
+        "Lower Right Third Molar (Wisdom Tooth) Pulp": 32
+    },
+    "channel_names": {
+        "0": "CBCT"
+    },
+    "numTraining": 277,
+    "dataset": {
+        "STS26_Train-Unlabeled_134": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_134_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_134.nii.gz"
+        },
+        "STS26_Train-Unlabeled_189": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_189_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_189.nii.gz"
+        },
+        "STS26_Train-Unlabeled_254": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_254_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_254.nii.gz"
+        },
+        "STS26_Train-Unlabeled_230": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_230_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_230.nii.gz"
+        },
+        "STS26_Train-Unlabeled_241": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_241_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_241.nii.gz"
+        },
+        "STS26_Train-Unlabeled_231": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_231_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_231.nii.gz"
+        },
+        "STS26_Train-Unlabeled_120": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_120_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_120.nii.gz"
+        },
+        "STS26_Train-Unlabeled_058": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_058_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_058.nii.gz"
+        },
+        "STS26_Train-Unlabeled_289": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_289_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_289.nii.gz"
+        },
+        "STS26_Train-Unlabeled_080": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_080_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_080.nii.gz"
+        },
+        "STS26_Train-Unlabeled_222": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_222_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_222.nii.gz"
+        },
+        "STS26_Train-Unlabeled_197": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_197_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_197.nii.gz"
+        },
+        "STS26_Train-Unlabeled_110": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_110_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_110.nii.gz"
+        },
+        "STS26_Train-Unlabeled_008": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_008_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_008.nii.gz"
+        },
+        "STS26_Train-Unlabeled_093": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_093_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_093.nii.gz"
+        },
+        "STS26_Train-Unlabeled_199": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_199_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_199.nii.gz"
+        },
+        "STS26_Train-Unlabeled_057": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_057_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_057.nii.gz"
+        },
+        "STS26_Train-Labeled_001": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_001_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_001.nii.gz"
+        },
+        "STS26_Train-Labeled_028": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_028_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_028.nii.gz"
+        },
+        "STS26_Train-Unlabeled_127": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_127_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_127.nii.gz"
+        },
+        "STS26_Train-Unlabeled_237": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_237_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_237.nii.gz"
+        },
+        "STS26_Train-Unlabeled_279": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_279_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_279.nii.gz"
+        },
+        "STS26_Train-Labeled_002": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_002_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_002.nii.gz"
+        },
+        "STS26_Train-Unlabeled_292": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_292_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_292.nii.gz"
+        },
+        "STS26_Train-Unlabeled_152": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_152_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_152.nii.gz"
+        },
+        "STS26_Train-Unlabeled_133": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_133_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_133.nii.gz"
+        },
+        "STS26_Train-Unlabeled_101": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_101_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_101.nii.gz"
+        },
+        "STS26_Train-Unlabeled_295": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_295_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_295.nii.gz"
+        },
+        "STS26_Train-Unlabeled_051": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_051_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_051.nii.gz"
+        },
+        "STS26_Train-Labeled_030": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_030_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_030.nii.gz"
+        },
+        "STS26_Train-Unlabeled_100": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_100_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_100.nii.gz"
+        },
+        "STS26_Train-Labeled_010": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_010_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_010.nii.gz"
+        },
+        "STS26_Train-Unlabeled_123": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_123_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_123.nii.gz"
+        },
+        "STS26_Train-Labeled_008": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_008_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_008.nii.gz"
+        },
+        "STS26_Train-Unlabeled_138": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_138_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_138.nii.gz"
+        },
+        "STS26_Train-Unlabeled_291": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_291_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_291.nii.gz"
+        },
+        "STS26_Train-Unlabeled_022": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_022_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_022.nii.gz"
+        },
+        "STS26_Train-Unlabeled_293": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_293_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_293.nii.gz"
+        },
+        "STS26_Train-Labeled_017": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_017_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_017.nii.gz"
+        },
+        "STS26_Train-Unlabeled_145": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_145_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_145.nii.gz"
+        },
+        "STS26_Train-Unlabeled_070": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_070_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_070.nii.gz"
+        },
+        "STS26_Train-Unlabeled_217": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_217_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_217.nii.gz"
+        },
+        "STS26_Train-Unlabeled_037": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_037_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_037.nii.gz"
+        },
+        "STS26_Train-Unlabeled_059": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_059_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_059.nii.gz"
+        },
+        "STS26_Train-Unlabeled_154": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_154_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_154.nii.gz"
+        },
+        "STS26_Train-Unlabeled_119": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_119_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_119.nii.gz"
+        },
+        "STS26_Train-Labeled_007": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_007_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_007.nii.gz"
+        },
+        "STS26_Train-Unlabeled_248": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_248_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_248.nii.gz"
+        },
+        "STS26_Train-Unlabeled_165": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_165_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_165.nii.gz"
+        },
+        "STS26_Train-Unlabeled_050": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_050_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_050.nii.gz"
+        },
+        "STS26_Train-Unlabeled_202": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_202_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_202.nii.gz"
+        },
+        "STS26_Train-Unlabeled_251": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_251_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_251.nii.gz"
+        },
+        "STS26_Train-Unlabeled_006": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_006_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_006.nii.gz"
+        },
+        "STS26_Train-Unlabeled_288": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_288_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_288.nii.gz"
+        },
+        "STS26_Train-Unlabeled_129": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_129_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_129.nii.gz"
+        },
+        "STS26_Train-Unlabeled_139": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_139_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_139.nii.gz"
+        },
+        "STS26_Train-Unlabeled_167": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_167_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_167.nii.gz"
+        },
+        "STS26_Train-Unlabeled_004": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_004_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_004.nii.gz"
+        },
+        "STS26_Train-Unlabeled_039": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_039_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_039.nii.gz"
+        },
+        "STS26_Train-Unlabeled_003": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_003_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_003.nii.gz"
+        },
+        "STS26_Train-Unlabeled_097": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_097_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_097.nii.gz"
+        },
+        "STS26_Train-Labeled_013": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_013_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_013.nii.gz"
+        },
+        "STS26_Train-Unlabeled_071": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_071_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_071.nii.gz"
+        },
+        "STS26_Train-Labeled_015": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_015_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_015.nii.gz"
+        },
+        "STS26_Train-Unlabeled_212": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_212_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_212.nii.gz"
+        },
+        "STS26_Train-Unlabeled_256": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_256_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_256.nii.gz"
+        },
+        "STS26_Train-Unlabeled_031": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_031_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_031.nii.gz"
+        },
+        "STS26_Train-Unlabeled_283": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_283_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_283.nii.gz"
+        },
+        "STS26_Train-Unlabeled_082": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_082_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_082.nii.gz"
+        },
+        "STS26_Train-Unlabeled_176": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_176_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_176.nii.gz"
+        },
+        "STS26_Train-Labeled_023": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_023_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_023.nii.gz"
+        },
+        "STS26_Train-Unlabeled_091": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_091_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_091.nii.gz"
+        },
+        "STS26_Train-Unlabeled_103": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_103_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_103.nii.gz"
+        },
+        "STS26_Train-Unlabeled_116": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_116_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_116.nii.gz"
+        },
+        "STS26_Train-Unlabeled_151": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_151_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_151.nii.gz"
+        },
+        "STS26_Train-Unlabeled_007": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_007_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_007.nii.gz"
+        },
+        "STS26_Train-Unlabeled_109": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_109_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_109.nii.gz"
+        },
+        "STS26_Train-Unlabeled_196": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_196_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_196.nii.gz"
+        },
+        "STS26_Train-Unlabeled_054": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_054_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_054.nii.gz"
+        },
+        "STS26_Train-Unlabeled_162": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_162_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_162.nii.gz"
+        },
+        "STS26_Train-Unlabeled_041": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_041_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_041.nii.gz"
+        },
+        "STS26_Train-Unlabeled_273": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_273_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_273.nii.gz"
+        },
+        "STS26_Train-Unlabeled_024": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_024_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_024.nii.gz"
+        },
+        "STS26_Train-Unlabeled_177": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_177_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_177.nii.gz"
+        },
+        "STS26_Train-Unlabeled_223": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_223_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_223.nii.gz"
+        },
+        "STS26_Train-Unlabeled_061": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_061_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_061.nii.gz"
+        },
+        "STS26_Train-Unlabeled_262": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_262_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_262.nii.gz"
+        },
+        "STS26_Train-Unlabeled_172": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_172_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_172.nii.gz"
+        },
+        "STS26_Train-Unlabeled_239": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_239_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_239.nii.gz"
+        },
+        "STS26_Train-Unlabeled_272": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_272_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_272.nii.gz"
+        },
+        "STS26_Train-Unlabeled_052": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_052_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_052.nii.gz"
+        },
+        "STS26_Train-Unlabeled_018": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_018_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_018.nii.gz"
+        },
+        "STS26_Train-Unlabeled_294": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_294_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_294.nii.gz"
+        },
+        "STS26_Train-Unlabeled_285": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_285_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_285.nii.gz"
+        },
+        "STS26_Train-Unlabeled_227": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_227_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_227.nii.gz"
+        },
+        "STS26_Train-Unlabeled_255": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_255_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_255.nii.gz"
+        },
+        "STS26_Train-Unlabeled_016": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_016_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_016.nii.gz"
+        },
+        "STS26_Train-Unlabeled_246": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_246_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_246.nii.gz"
+        },
+        "STS26_Train-Unlabeled_020": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_020_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_020.nii.gz"
+        },
+        "STS26_Train-Unlabeled_028": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_028_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_028.nii.gz"
+        },
+        "STS26_Train-Unlabeled_198": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_198_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_198.nii.gz"
+        },
+        "STS26_Train-Unlabeled_174": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_174_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_174.nii.gz"
+        },
+        "STS26_Train-Unlabeled_012": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_012_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_012.nii.gz"
+        },
+        "STS26_Train-Unlabeled_190": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_190_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_190.nii.gz"
+        },
+        "STS26_Train-Unlabeled_033": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_033_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_033.nii.gz"
+        },
+        "STS26_Train-Unlabeled_240": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_240_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_240.nii.gz"
+        },
+        "STS26_Train-Unlabeled_081": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_081_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_081.nii.gz"
+        },
+        "STS26_Train-Unlabeled_276": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_276_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_276.nii.gz"
+        },
+        "STS26_Train-Labeled_027": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_027_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_027.nii.gz"
+        },
+        "STS26_Train-Unlabeled_114": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_114_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_114.nii.gz"
+        },
+        "STS26_Train-Unlabeled_247": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_247_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_247.nii.gz"
+        },
+        "STS26_Train-Unlabeled_085": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_085_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_085.nii.gz"
+        },
+        "STS26_Train-Unlabeled_113": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_113_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_113.nii.gz"
+        },
+        "STS26_Train-Labeled_003": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_003_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_003.nii.gz"
+        },
+        "STS26_Train-Labeled_019": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_019_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_019.nii.gz"
+        },
+        "STS26_Train-Unlabeled_038": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_038_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_038.nii.gz"
+        },
+        "STS26_Train-Unlabeled_149": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_149_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_149.nii.gz"
+        },
+        "STS26_Train-Unlabeled_297": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_297_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_297.nii.gz"
+        },
+        "STS26_Train-Unlabeled_009": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_009_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_009.nii.gz"
+        },
+        "STS26_Train-Unlabeled_083": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_083_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_083.nii.gz"
+        },
+        "STS26_Train-Unlabeled_064": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_064_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_064.nii.gz"
+        },
+        "STS26_Train-Unlabeled_243": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_243_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_243.nii.gz"
+        },
+        "STS26_Train-Unlabeled_191": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_191_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_191.nii.gz"
+        },
+        "STS26_Train-Unlabeled_056": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_056_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_056.nii.gz"
+        },
+        "STS26_Train-Unlabeled_066": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_066_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_066.nii.gz"
+        },
+        "STS26_Train-Labeled_005": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_005_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_005.nii.gz"
+        },
+        "STS26_Train-Labeled_006": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_006_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_006.nii.gz"
+        },
+        "STS26_Train-Unlabeled_277": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_277_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_277.nii.gz"
+        },
+        "STS26_Train-Unlabeled_096": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_096_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_096.nii.gz"
+        },
+        "STS26_Train-Unlabeled_042": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_042_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_042.nii.gz"
+        },
+        "STS26_Train-Unlabeled_046": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_046_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_046.nii.gz"
+        },
+        "STS26_Train-Unlabeled_188": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_188_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_188.nii.gz"
+        },
+        "STS26_Train-Unlabeled_206": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_206_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_206.nii.gz"
+        },
+        "STS26_Train-Unlabeled_062": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_062_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_062.nii.gz"
+        },
+        "STS26_Train-Unlabeled_005": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_005_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_005.nii.gz"
+        },
+        "STS26_Train-Unlabeled_298": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_298_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_298.nii.gz"
+        },
+        "STS26_Train-Unlabeled_155": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_155_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_155.nii.gz"
+        },
+        "STS26_Train-Unlabeled_073": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_073_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_073.nii.gz"
+        },
+        "STS26_Train-Unlabeled_186": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_186_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_186.nii.gz"
+        },
+        "STS26_Train-Unlabeled_271": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_271_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_271.nii.gz"
+        },
+        "STS26_Train-Unlabeled_286": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_286_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_286.nii.gz"
+        },
+        "STS26_Train-Unlabeled_117": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_117_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_117.nii.gz"
+        },
+        "STS26_Train-Unlabeled_244": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_244_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_244.nii.gz"
+        },
+        "STS26_Train-Unlabeled_112": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_112_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_112.nii.gz"
+        },
+        "STS26_Train-Unlabeled_147": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_147_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_147.nii.gz"
+        },
+        "STS26_Train-Labeled_021": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_021_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_021.nii.gz"
+        },
+        "STS26_Train-Unlabeled_201": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_201_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_201.nii.gz"
+        },
+        "STS26_Train-Unlabeled_025": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_025_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_025.nii.gz"
+        },
+        "STS26_Train-Unlabeled_185": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_185_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_185.nii.gz"
+        },
+        "STS26_Train-Unlabeled_131": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_131_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_131.nii.gz"
+        },
+        "STS26_Train-Unlabeled_032": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_032_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_032.nii.gz"
+        },
+        "STS26_Train-Unlabeled_263": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_263_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_263.nii.gz"
+        },
+        "STS26_Train-Unlabeled_135": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_135_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_135.nii.gz"
+        },
+        "STS26_Train-Unlabeled_236": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_236_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_236.nii.gz"
+        },
+        "STS26_Train-Unlabeled_055": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_055_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_055.nii.gz"
+        },
+        "STS26_Train-Unlabeled_141": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_141_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_141.nii.gz"
+        },
+        "STS26_Train-Unlabeled_137": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_137_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_137.nii.gz"
+        },
+        "STS26_Train-Unlabeled_011": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_011_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_011.nii.gz"
+        },
+        "STS26_Train-Labeled_025": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_025_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_025.nii.gz"
+        },
+        "STS26_Train-Unlabeled_163": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_163_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_163.nii.gz"
+        },
+        "STS26_Train-Unlabeled_089": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_089_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_089.nii.gz"
+        },
+        "STS26_Train-Unlabeled_192": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_192_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_192.nii.gz"
+        },
+        "STS26_Train-Unlabeled_226": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_226_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_226.nii.gz"
+        },
+        "STS26_Train-Labeled_012": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_012_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_012.nii.gz"
+        },
+        "STS26_Train-Unlabeled_232": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_232_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_232.nii.gz"
+        },
+        "STS26_Train-Unlabeled_099": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_099_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_099.nii.gz"
+        },
+        "STS26_Train-Unlabeled_104": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_104_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_104.nii.gz"
+        },
+        "STS26_Train-Unlabeled_115": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_115_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_115.nii.gz"
+        },
+        "STS26_Train-Unlabeled_261": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_261_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_261.nii.gz"
+        },
+        "STS26_Train-Unlabeled_268": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_268_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_268.nii.gz"
+        },
+        "STS26_Train-Unlabeled_021": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_021_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_021.nii.gz"
+        },
+        "STS26_Train-Unlabeled_068": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_068_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_068.nii.gz"
+        },
+        "STS26_Train-Unlabeled_183": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_183_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_183.nii.gz"
+        },
+        "STS26_Train-Unlabeled_121": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_121_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_121.nii.gz"
+        },
+        "STS26_Train-Unlabeled_210": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_210_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_210.nii.gz"
+        },
+        "STS26_Train-Unlabeled_228": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_228_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_228.nii.gz"
+        },
+        "STS26_Train-Unlabeled_065": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_065_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_065.nii.gz"
+        },
+        "STS26_Train-Unlabeled_282": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_282_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_282.nii.gz"
+        },
+        "STS26_Train-Unlabeled_143": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_143_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_143.nii.gz"
+        },
+        "STS26_Train-Labeled_026": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_026_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_026.nii.gz"
+        },
+        "STS26_Train-Unlabeled_017": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_017_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_017.nii.gz"
+        },
+        "STS26_Train-Unlabeled_264": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_264_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_264.nii.gz"
+        },
+        "STS26_Train-Unlabeled_069": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_069_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_069.nii.gz"
+        },
+        "STS26_Train-Labeled_024": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_024_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_024.nii.gz"
+        },
+        "STS26_Train-Unlabeled_001": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_001_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_001.nii.gz"
+        },
+        "STS26_Train-Unlabeled_060": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_060_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_060.nii.gz"
+        },
+        "STS26_Train-Labeled_016": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_016_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_016.nii.gz"
+        },
+        "STS26_Train-Unlabeled_200": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_200_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_200.nii.gz"
+        },
+        "STS26_Train-Unlabeled_229": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_229_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_229.nii.gz"
+        },
+        "STS26_Train-Unlabeled_079": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_079_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_079.nii.gz"
+        },
+        "STS26_Train-Labeled_009": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_009_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_009.nii.gz"
+        },
+        "STS26_Train-Unlabeled_173": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_173_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_173.nii.gz"
+        },
+        "STS26_Train-Unlabeled_095": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_095_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_095.nii.gz"
+        },
+        "STS26_Train-Unlabeled_026": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_026_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_026.nii.gz"
+        },
+        "STS26_Train-Unlabeled_220": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_220_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_220.nii.gz"
+        },
+        "STS26_Train-Unlabeled_036": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_036_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_036.nii.gz"
+        },
+        "STS26_Train-Labeled_029": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_029_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_029.nii.gz"
+        },
+        "STS26_Train-Unlabeled_084": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_084_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_084.nii.gz"
+        },
+        "STS26_Train-Unlabeled_245": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_245_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_245.nii.gz"
+        },
+        "STS26_Train-Unlabeled_087": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_087_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_087.nii.gz"
+        },
+        "STS26_Train-Unlabeled_002": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_002_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_002.nii.gz"
+        },
+        "STS26_Train-Unlabeled_090": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_090_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_090.nii.gz"
+        },
+        "STS26_Train-Labeled_011": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_011_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_011.nii.gz"
+        },
+        "STS26_Train-Unlabeled_108": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_108_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_108.nii.gz"
+        },
+        "STS26_Train-Unlabeled_078": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_078_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_078.nii.gz"
+        },
+        "STS26_Train-Unlabeled_045": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_045_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_045.nii.gz"
+        },
+        "STS26_Train-Unlabeled_148": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_148_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_148.nii.gz"
+        },
+        "STS26_Train-Unlabeled_047": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_047_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_047.nii.gz"
+        },
+        "STS26_Train-Labeled_004": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_004_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_004.nii.gz"
+        },
+        "STS26_Train-Unlabeled_124": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_124_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_124.nii.gz"
+        },
+        "STS26_Train-Unlabeled_118": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_118_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_118.nii.gz"
+        },
+        "STS26_Train-Unlabeled_019": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_019_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_019.nii.gz"
+        },
+        "STS26_Train-Unlabeled_238": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_238_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_238.nii.gz"
+        },
+        "STS26_Train-Unlabeled_040": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_040_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_040.nii.gz"
+        },
+        "STS26_Train-Unlabeled_150": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_150_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_150.nii.gz"
+        },
+        "STS26_Train-Unlabeled_175": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_175_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_175.nii.gz"
+        },
+        "STS26_Train-Unlabeled_077": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_077_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_077.nii.gz"
+        },
+        "STS26_Train-Labeled_020": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_020_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_020.nii.gz"
+        },
+        "STS26_Train-Unlabeled_179": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_179_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_179.nii.gz"
+        },
+        "STS26_Train-Unlabeled_242": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_242_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_242.nii.gz"
+        },
+        "STS26_Train-Unlabeled_125": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_125_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_125.nii.gz"
+        },
+        "STS26_Train-Unlabeled_281": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_281_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_281.nii.gz"
+        },
+        "STS26_Train-Unlabeled_211": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_211_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_211.nii.gz"
+        },
+        "STS26_Train-Unlabeled_128": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_128_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_128.nii.gz"
+        },
+        "STS26_Train-Unlabeled_048": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_048_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_048.nii.gz"
+        },
+        "STS26_Train-Unlabeled_166": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_166_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_166.nii.gz"
+        },
+        "STS26_Train-Unlabeled_013": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_013_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_013.nii.gz"
+        },
+        "STS26_Train-Unlabeled_296": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_296_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_296.nii.gz"
+        },
+        "STS26_Train-Unlabeled_102": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_102_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_102.nii.gz"
+        },
+        "STS26_Train-Unlabeled_203": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_203_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_203.nii.gz"
+        },
+        "STS26_Train-Unlabeled_156": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_156_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_156.nii.gz"
+        },
+        "STS26_Train-Labeled_014": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_014_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_014.nii.gz"
+        },
+        "STS26_Train-Unlabeled_193": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_193_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_193.nii.gz"
+        },
+        "STS26_Train-Labeled_018": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_018_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_018.nii.gz"
+        },
+        "STS26_Train-Unlabeled_278": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_278_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_278.nii.gz"
+        },
+        "STS26_Train-Unlabeled_267": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_267_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_267.nii.gz"
+        },
+        "STS26_Train-Unlabeled_122": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_122_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_122.nii.gz"
+        },
+        "STS26_Train-Unlabeled_280": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_280_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_280.nii.gz"
+        },
+        "STS26_Train-Unlabeled_086": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_086_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_086.nii.gz"
+        },
+        "STS26_Train-Unlabeled_299": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_299_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_299.nii.gz"
+        },
+        "STS26_Train-Unlabeled_106": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_106_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_106.nii.gz"
+        },
+        "STS26_Train-Unlabeled_074": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_074_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_074.nii.gz"
+        },
+        "STS26_Train-Unlabeled_207": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_207_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_207.nii.gz"
+        },
+        "STS26_Train-Unlabeled_098": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_098_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_098.nii.gz"
+        },
+        "STS26_Train-Unlabeled_170": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_170_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_170.nii.gz"
+        },
+        "STS26_Train-Unlabeled_284": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_284_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_284.nii.gz"
+        },
+        "STS26_Train-Unlabeled_164": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_164_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_164.nii.gz"
+        },
+        "STS26_Train-Unlabeled_194": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_194_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_194.nii.gz"
+        },
+        "STS26_Train-Unlabeled_158": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_158_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_158.nii.gz"
+        },
+        "STS26_Train-Unlabeled_063": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_063_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_063.nii.gz"
+        },
+        "STS26_Train-Unlabeled_215": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_215_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_215.nii.gz"
+        },
+        "STS26_Train-Unlabeled_204": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_204_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_204.nii.gz"
+        },
+        "STS26_Train-Unlabeled_053": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_053_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_053.nii.gz"
+        },
+        "STS26_Train-Unlabeled_027": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_027_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_027.nii.gz"
+        },
+        "STS26_Train-Unlabeled_107": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_107_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_107.nii.gz"
+        },
+        "STS26_Train-Unlabeled_094": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_094_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_094.nii.gz"
+        },
+        "STS26_Train-Labeled_022": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Labeled_022_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Labeled_022.nii.gz"
+        },
+        "STS26_Train-Unlabeled_153": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_153_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_153.nii.gz"
+        },
+        "STS26_Train-Unlabeled_287": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_287_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_287.nii.gz"
+        },
+        "STS26_Train-Unlabeled_265": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_265_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_265.nii.gz"
+        },
+        "STS26_Train-Unlabeled_250": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_250_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_250.nii.gz"
+        },
+        "STS26_Train-Unlabeled_168": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_168_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_168.nii.gz"
+        },
+        "STS26_Train-Unlabeled_140": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_140_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_140.nii.gz"
+        },
+        "STS26_Train-Unlabeled_233": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_233_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_233.nii.gz"
+        },
+        "STS26_Train-Unlabeled_043": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_043_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_043.nii.gz"
+        },
+        "STS26_Train-Unlabeled_130": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_130_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_130.nii.gz"
+        },
+        "STS26_Train-Unlabeled_067": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_067_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_067.nii.gz"
+        },
+        "STS26_Train-Unlabeled_270": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_270_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_270.nii.gz"
+        },
+        "STS26_Train-Unlabeled_092": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_092_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_092.nii.gz"
+        },
+        "STS26_Train-Unlabeled_015": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_015_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_015.nii.gz"
+        },
+        "STS26_Train-Unlabeled_034": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_034_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_034.nii.gz"
+        },
+        "STS26_Train-Unlabeled_010": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_010_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_010.nii.gz"
+        },
+        "STS26_Train-Unlabeled_219": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_219_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_219.nii.gz"
+        },
+        "STS26_Train-Unlabeled_257": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_257_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_257.nii.gz"
+        },
+        "STS26_Train-Unlabeled_072": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_072_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_072.nii.gz"
+        },
+        "STS26_Train-Unlabeled_029": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_029_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_029.nii.gz"
+        },
+        "STS26_Train-Unlabeled_171": {
+            "images": [
+                "../Dataset811_MICCAILabeled/imagesTr/STS26_Train-Unlabeled_171_0000.nii.gz"
+            ],
+            "label": "labelsTr/STS26_Train-Unlabeled_171.nii.gz"
+        }
+    }
+}
