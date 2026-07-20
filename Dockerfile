@@ -55,7 +55,7 @@ RUN python -m pip install --user -r requirements.txt
 # --> ACTION REQUIRED: COPY YOUR FILES <--
 # Copy your inference script, model definitions, and any utility files.
 # Make sure the paths here match your project structure.
-COPY --chown=algorithm:algorithm ./scripts/TestInfer.py /opt/algorithm/
+COPY --chown=algorithm:algorithm ./scripts /opt/algorithm/
 COPY --chown=algorithm:algorithm ./run_inference.py /opt/algorithm/
 COPY --chown=algorithm:algorithm ./predict.sh /opt/algorithm/
 
