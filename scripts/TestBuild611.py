@@ -175,45 +175,34 @@ def process_ds(
 if __name__ ==  "__main__":
     root = "/home/data2/xrs/nnUNet_raw/"
 
-    # input_ds = "Train-Labeled"
-    # input_root0 = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/"
-    # process_ds(
-    #     root = input_root0,
-    #     out_root = root,
-    #     input_ds = input_ds,
-    #     output_ds = "Dataset611_MICCAILabeled",
-    #     mapping = None,
-    #     image_link = None,
-    # )
-    #
-    # input_ds = "Dataset611_MICCAILabeled"
-    # output_ds = "Dataset621_MICCAILabeled"
-    # process_ds(
-    #     root = root,
-    #     out_root = root,
-    #     input_ds = input_ds,
-    #     output_ds = output_ds,
-    #     mapping = mapping_DS621(),
-    #     image_link = input_ds,
-    # )
-
-    # output_ds = "Dataset616_MICCAILabeled"
-    # process_ds(
-    #     root = root,
-    #     out_root = root,
-    #     input_ds = input_ds,
-    #     output_ds = output_ds,
-    #     mapping = mapping_DS616(),
-    #     image_link = input_ds,
-    # )
+    input_ds = "Train-Labeled"
+    input_root0 = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/"
+    process_ds(
+        root = input_root0,
+        out_root = root,
+        input_ds = input_ds,
+        output_ds = "Dataset611_MICCAILabeled",
+        mapping = None,
+        image_link = None,
+    )
 
     input_ds = "Dataset611_MICCAILabeled"
-    output_ds = "Dataset627_MICCAILabeled"
+    output_ds = "Dataset621_MICCAILabeled"
     process_ds(
         root = root,
         out_root = root,
         input_ds = input_ds,
         output_ds = output_ds,
-        mapping = mapping_DS627(),
+        mapping = mapping_DS621(),
+        image_link = input_ds,
+    )
+
+    output_ds = "Dataset616_MICCAILabeled"
+    process_ds(
+        root = root,
+        out_root = root,
+        input_ds = input_ds,
+        output_ds = output_ds,
+        mapping = mapping_DS616(),
         image_link = input_ds,
     )

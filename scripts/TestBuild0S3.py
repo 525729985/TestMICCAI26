@@ -304,18 +304,18 @@ def main(in_image_dir: str, in_label_dir: str | None, output_dir: str, target_sp
 if __name__ == "__main__":
     target_spacing = (0.3, 0.3, 0.3)
 
-    # main(
-    #     in_image_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1/Train-Labeled/images",
-    #     in_label_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1/Train-Labeled/labels",
-    #     output_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/Train-Labeled",
-    #     target_spacing = target_spacing,
-    # )
-    # main(
-    #     in_image_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1/Train-Unlabeled/images",
-    #     in_label_dir = None,
-    #     output_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/Train-Unlabeled",
-    #     target_spacing = target_spacing,
-    # )
+    main(
+        in_image_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1/Train-Labeled/images",
+        in_label_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1/Train-Labeled/labels",
+        output_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/Train-Labeled",
+        target_spacing = target_spacing,
+    )
+    main(
+        in_image_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1/Train-Unlabeled/images",
+        in_label_dir = None,
+        output_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/Train-Unlabeled",
+        target_spacing = target_spacing,
+    )
     main(
         in_image_dir = "/home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1/Validation/images",
         in_label_dir = None,

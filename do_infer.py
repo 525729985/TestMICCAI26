@@ -191,11 +191,11 @@ def init_predictors(cuda = 0):
         allow_tqdm = True,
     )
     predictor916.initialize_from_trained_model_folder(
-        join(nnUNet_results, "Dataset916_MICCAILabeled/nnUNetTrainer__nnUNetPlans__3d_new"),
+        join(nnUNet_results, "Dataset916_MICCAIUnlabeled/nnUNetTrainer__nnUNetPlans__3d_new"),
         use_folds = (0,),
         checkpoint_name = "checkpoint_final.pth",
     )
-
+    
     predictor821 = nnUNetPredictor(
         tile_step_size = 0.5,
         use_gaussian = True,
@@ -207,12 +207,12 @@ def init_predictors(cuda = 0):
         allow_tqdm = True,
     )
     predictor821.initialize_from_trained_model_folder(
-        join(nnUNet_results, "Dataset1121_MICCAILabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
+        join(nnUNet_results, "Dataset1121_MICCAIUnlabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
         use_folds=(0,),
         checkpoint_name="checkpoint_final.pth",
     )
     # predictor821.initialize_from_trained_model_folder(
-    #     join(nnUNet_results, "Dataset821_MICCAILabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
+    #     join(nnUNet_results, "Dataset821_MICCAIUnlabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
     #     use_folds = (0,),
     #     checkpoint_name = "checkpoint_final.pth",
     # )

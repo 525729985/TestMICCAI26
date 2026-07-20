@@ -118,7 +118,7 @@ process_ds(
     out_root = "/home/data2/xrs/nnUNet_raw/",
     input_ds = "Train-Unlabeled",
     labeled_ds = "Dataset611_MICCAILabeled",
-    output_ds = "Dataset1011_MICCAILabeled",
+    output_ds = "Dataset1011_MICCAIUnlabeled",
     ref_fake = "/home/data2/xrs/dataset/pred_out/pred2/Train-Unlabeled1000_1000/",
     ref_fake_csv = "size.csv",
 )

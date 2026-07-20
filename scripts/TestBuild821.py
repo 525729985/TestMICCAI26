@@ -161,8 +161,8 @@ if __name__ ==  "__main__":
     input = "/home/data2/xrs/nnUNet_raw/"
     output = "/home/data2/xrs/nnUNet_raw/"
 
-    input_ds = "Dataset811_MICCAILabeled"
-    output_ds = "Dataset821_MICCAILabeled"
+    input_ds = "Dataset811_MICCAIUnlabeled"
+    output_ds = "Dataset821_MICCAIUnlabeled"
     process_ds(
         root = input,
         out_root = output,
@@ -172,8 +172,8 @@ if __name__ ==  "__main__":
         image_link = input_ds,
     )
 
-    input_ds = "Dataset911_MICCAILabeled"
-    output_ds = "Dataset916_MICCAILabeled"
+    input_ds = "Dataset911_MICCAIUnlabeled"
+    output_ds = "Dataset916_MICCAIUnlabeled"
     process_ds(
         root = input,
         out_root = output,

@@ -172,8 +172,8 @@ if __name__ ==  "__main__":
     #     image_link = input_ds,
     # )
 
-    input_ds = "Dataset1111_MICCAILabeled"
-    output_ds = "Dataset1121_MICCAILabeled"
+    input_ds = "Dataset1111_MICCAIUnlabeled"
+    output_ds = "Dataset1121_MICCAIUnlabeled"
     process_ds(
         root = input,
         out_root = output,

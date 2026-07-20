@@ -118,7 +118,7 @@ process_ds(
     out_root = "/home/data2/xrs/nnUNet_raw/",
     input_ds = "Train-Unlabeled",
     labeled_ds = "Dataset611_MICCAILabeled",
-    output_ds = "Dataset811_MICCAILabeled",
+    output_ds = "Dataset811_MICCAIUnlabeled",
     ref_fake = "/home/data2/xrs/dataset/pred_out/pred/Train-Unlabeled250_250/",
     ref_fake_csv = "size.csv",
 )
@@ -128,7 +128,7 @@ process_ds(
     out_root = "/home/data2/xrs/nnUNet_raw/",
     input_ds = "Train-Unlabeled",
     labeled_ds = "Dataset711_MICCAILabeled",
-    output_ds = "Dataset911_MICCAILabeled",
+    output_ds = "Dataset911_MICCAIUnlabeled",
     ref_fake = "/home/data2/xrs/dataset/pred_out/pred/Train-Unlabeled250_250/",
     ref_fake_csv = "size.csv",
 )

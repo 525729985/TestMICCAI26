@@ -80,13 +80,7 @@ def main(input_dir, output_dir, ref_dir = None, small_max_size = 0, processes = 
 
 if __name__ == "__main__":
     # type_num1 = "250"
-    # type_num2 = "500"
-
-    # type = "Train-Labeled"
-    # input = f"/home/data2/xrs/dataset/pred_out/pred_716/{type}{type_num1}"
-    # output = f"./pred/{type}{type_num1}_{type_num2}"
-    # ref = f"/home/data2/xrs/dataset/pred_out/pred_621/{type}{type_num2}"
-    # main(input, output, ref, small_max_size = 3000, processes = 8)
+    # type_num2 = "250"
 
     # type = "Train-Unlabeled"
     # input = f"/home/data2/xrs/dataset/pred_out/pred_716/{type}{type_num1}"
@@ -94,38 +88,13 @@ if __name__ == "__main__":
     # ref = f"/home/data2/xrs/dataset/pred_out/pred_621/{type}{type_num2}"
     # main(input, output, ref, small_max_size = 3000, processes = 8)
 
-    # type = "Validation"
-    # input = f"/home/data2/xrs/dataset/pred_out/pred_716/{type}{type_num1}"
-    # output = f"./pred/{type}{type_num1}_{type_num2}"
-    # ref = f"/home/data2/xrs/dataset/pred_out/pred_621/{type}{type_num2}"
-    # main(input, output, ref, small_max_size = 3000, processes = 8)
-
-    # type = "Train-Labeled"
-    # input = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred_216/{type}"
-    # output = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred/{type}"
-    # ref = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred_121/{type}"
-    # main(input, output, ref, small_max_size = 3000, processes = 8)
-
+    # type_num1 = "1000"
+    # type_num2 = "1000"
+    #
     # type = "Train-Unlabeled"
-    # input = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred_216/{type}"
-    # output = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred/{type}"
-    # ref = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred_121/{type}"
+    # input = f"/home/data2/xrs/dataset/pred_out/pred_916/{type}{type_num1}"
+    # output = f"/home/data2/xrs/dataset/pred_out/pred2/{type}{type_num1}_{type_num2}"
+    # ref = f"/home/data2/xrs/dataset/pred_out/pred_821/{type}{type_num2}"
     # main(input, output, ref, small_max_size = 3000, processes = 8)
-
-    # type = "Validation"
-    # input = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred_216/{type}"
-    # output = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred/{type}"
-    # ref = f"/home/data2/xrs/dataset/STS26-Task1_S3_Pred/pred_121/{type}"
-    # main(input, output, ref, small_max_size = 3000, processes = 8)
-
-    type_num1 = "500"
-    type_num2 = "250"
-
-    type = "Validation"
-    input = f"/home/data2/xrs/dataset/pred_out/pred_716/{type}{type_num1}"
-    output = f"/home/data2/xrs/dataset/pred_out/pred/{type}{type_num1}_{type_num2}"
-    ref = f"/home/data2/xrs/dataset/pred_out/pred_621/{type}{type_num2}"
-    main(input, output, ref, small_max_size = 3000, processes = 8)
-
 
     print("ok")
