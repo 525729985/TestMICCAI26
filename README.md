@@ -2,7 +2,7 @@
     ```bash
     docker run \
       --shm-size=1G \
-      --gpus "device=2" \
+      --gpus all \
       --name thisxu \
       --rm \
       -v "./input_folder":/inputs \
