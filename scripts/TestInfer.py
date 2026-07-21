@@ -177,7 +177,7 @@ def write_seg(seg, output_name, properties, is_reverse):
     itk_image.CopyInformation(origin_itk)
     sitk.WriteImage(itk_image, output_name, True)
 
-def init_predictors(cuda = 0):
+def init_predictors(cuda = 0, verbose = False):
     predictor916 = nnUNetPredictor(
         # tile_step_size = 0.5,
         tile_step_size = 0.8,
@@ -188,7 +188,7 @@ def init_predictors(cuda = 0):
         device = torch.device("cuda", cuda),
         verbose = False,
         verbose_preprocessing = False,
-        allow_tqdm = True,
+        allow_tqdm = verbose,
     )
     predictor916.initialize_from_trained_model_folder(
         join(nnUNet_results, "Dataset916_MICCAIUnlabeled/nnUNetTrainer__nnUNetPlans__3d_new"),
@@ -204,7 +204,7 @@ def init_predictors(cuda = 0):
         device = torch.device("cuda", cuda),
         verbose = False,
         verbose_preprocessing = False,
-        allow_tqdm = True,
+        allow_tqdm = verbose,
     )
     predictor821.initialize_from_trained_model_folder(
         join(nnUNet_results, "Dataset1221_MICCAIUnlabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
@@ -253,7 +253,7 @@ def main(input_dir, output_dir, verbose = False):
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok = True, parents = True)
 
-    predictors = init_predictors()
+    predictors = init_predictors(verbose = verbose)
     infer_spacing = (0.3, 0.3, 0.3)
 
     with ProcessPoolExecutor(max_workers = 2, mp_context = mp.get_context("spawn")) as pool:
