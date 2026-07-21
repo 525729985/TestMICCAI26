@@ -1,0 +1,38 @@
+[
+    {
+        "train": [
+            "STS26_Train-Labeled_002",
+            "STS26_Train-Labeled_003",
+            "STS26_Train-Labeled_004",
+            "STS26_Train-Labeled_005",
+            "STS26_Train-Labeled_006",
+            "STS26_Train-Labeled_008",
+            "STS26_Train-Labeled_009",
+            "STS26_Train-Labeled_012",
+            "STS26_Train-Labeled_014",
+            "STS26_Train-Labeled_015",
+            "STS26_Train-Labeled_016",
+            "STS26_Train-Labeled_017",
+            "STS26_Train-Labeled_019",
+            "STS26_Train-Labeled_020",
+            "STS26_Train-Labeled_021",
+            "STS26_Train-Labeled_022",
+            "STS26_Train-Labeled_023",
+            "STS26_Train-Labeled_025",
+            "STS26_Train-Labeled_026",
+            "STS26_Train-Labeled_027",
+            "STS26_Train-Labeled_028"
+        ],
+        "val": [
+            "STS26_Train-Labeled_001",
+            "STS26_Train-Labeled_007",
+            "STS26_Train-Labeled_010",
+            "STS26_Train-Labeled_011",
+            "STS26_Train-Labeled_013",
+            "STS26_Train-Labeled_018",
+            "STS26_Train-Labeled_024",
+            "STS26_Train-Labeled_029",
+            "STS26_Train-Labeled_030"
+        ]
+    }
+]
