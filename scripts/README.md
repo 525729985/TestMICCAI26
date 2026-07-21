@@ -24,7 +24,7 @@ python scripts/TestBuildWater.py
 nnUNetv2_extract_fingerprint -d 621
 nnUNetv2_plan_experiment -d 621
 nnUNetv2_preprocess -d 621 -c 3d_new
-nnUNetv2_train 621 3d_new 0 --c -tr nnUNetTrainer_250epochs_NoMirroring -num_gpus 2
+nnUNetv2_train 621 3d_new 0 --c -tr nnUNetTrainer_250epochs_NoMirroring
 
 nnUNetv2_extract_fingerprint -d 716
 nnUNetv2_plan_experiment -d 716
