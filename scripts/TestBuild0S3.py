@@ -161,24 +161,6 @@ def process_image(input_path, output_path, is_label, target_spacing):
         target_spacing = target_spacing,
     )
     sitk.WriteImage(image, output_path)
-def get_by_adj_tooth(label_np, pulp_id):
-    mask = label_np == pulp_id
-    z_idx, y_idx, x_idx = np.nonzero(mask)
-    max_z_idx = np.argmax(z_idx)
-
-    # 上侧或下侧取5x5片
-    max_z_coord = [z_idx[max_z_idx], y_idx[max_z_idx], x_idx[max_z_idx]]
-    max_z_around = label_np[max_z_coord[0], max_z_coord[1] - 2:  max_z_coord[1] + 3, max_z_coord[2] - 2: max_z_coord[2] + 3]
-    ids, counts = np.unique(max_z_around[max_z_around < 33], return_counts = True)
-    id = ids[counts.argmax()] + 32
-    if id > 32:
-        return id
-    min_z_idx = np.argmin(z_idx)
-    min_z_coord = [z_idx[min_z_idx], y_idx[min_z_idx], x_idx[min_z_idx]]
-    min_z_around = label_np[min_z_coord[0], min_z_coord[1] - 2:  min_z_coord[1] + 3, min_z_coord[2] - 2: min_z_coord[2] + 3]
-    ids, counts = np.unique(min_z_around[min_z_around < 33], return_counts = True)
-    id = ids[counts.argmax()] + 32
-    return id
 
 def watershed_segmentation(mask, min_distance = 8):
     binary = mask > 0
@@ -259,7 +241,8 @@ def process(image_path, label_path, out_image_dir, out_label_dir, target_spacing
         label_sitk = rotate_volume(label_sitk)
     else:
         label_np = sitk.GetArrayFromImage(label_sitk)
-        # 统一按周围牙齿使用tooth_id+32修复神经编号
+        # TODO
+        # 统一按周围牙齿使用tooth_id+32对神经编号额外修复
         label_np_new = fix_by_water(label_np, count_bg = False)
 
         label_sitk_new = sitk.GetImageFromArray(label_np_new)

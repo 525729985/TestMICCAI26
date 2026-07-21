@@ -31,13 +31,8 @@ def get_up_low_mapping():
     mapping.update({i: 4 for i in range(49, 65)})
     return mapping
 
-def process(image_path, label_path, output_image_dir, output_label_dir, up_low_mapping):
-    image_sitk = sitk.ReadImage(image_path)
-    image_np = sitk.GetArrayFromImage(image_sitk)
-
-    label_sitk = sitk.ReadImage(label_path)
-    label_np = sitk.GetArrayFromImage(label_sitk)
-
+def fix_ct_density(image_np, label_np):
+    up_low_mapping = get_up_low_mapping()
     label_np_up_low = np.zeros_like(label_np, dtype = np.uint8)
     for org_id, new_id in up_low_mapping.items():
         label_np_up_low[label_np == org_id] = new_id
@@ -47,6 +42,17 @@ def process(image_path, label_path, output_image_dir, output_label_dir, up_low_m
     elif label_np_up_low[label_np_up_low == 4].size == 0:
         low_mask = label_np_up_low == 2
         image_np[low_mask] = 3500
+
+def process(image_path, label_path, output_image_dir, output_label_dir):
+    image_sitk = sitk.ReadImage(image_path)
+    image_np = sitk.GetArrayFromImage(image_sitk)
+
+    label_sitk = sitk.ReadImage(label_path)
+    label_np = sitk.GetArrayFromImage(label_sitk)
+
+    # TODO
+    # For half-mouth cases labeled only with teeth and lacking pulp labels: set CT density value to 3500 to simulate implant teeth.
+    fix_ct_density(image_np, label_np)
 
     image_sitk_new = sitk.GetImageFromArray(image_np)
     image_sitk_new.CopyInformation(image_sitk)
@@ -81,7 +87,6 @@ def main(input_dir, output_dir, processes = 8):
                 str(input_label_dir / file.name.replace("_0000", "")),
                 str(output_image_dir),
                 str(output_label_dir),
-                get_up_low_mapping(),
             ])
             for file in data_list
         ]

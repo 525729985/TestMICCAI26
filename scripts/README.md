@@ -13,9 +13,11 @@ python scripts/TestBuild711.py
 python scripts/TestBuildWater.py
 ```
 
+**DatasetX11_MICCAILabeled**
+`1-32: tooth`, `33-64: tooth`
 **Dataset621_MICCAILabeled**
 `1-32: tooth`
-**Dataset721_MICCAILabeled**
+**Dataset716_MICCAILabeled**
 `1: tooth, 2: pulp`
 
 ```bash
@@ -58,10 +60,10 @@ nnUNetv2_train 916 3d_new 0 -tr nnUNetTrainer
 #### **Step 2: Train Unlabeled Spacing 1.0**
 ```bash
 python scripts/TestBuild1011Fake.py
+python scripts/TestBuild1211S1.py
 python scripts/TestBuild1021.py
 ```
-
-**Dataset1121_MICCAIUnlabeled**
+**Dataset1221_MICCAIUnlabeled**
 `1-32: tooth, spacing(1.0, 1.0, 1.0)`
 
 ```bash

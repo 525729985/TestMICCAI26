@@ -1,6 +1,6 @@
 {
     "file_ending": ".nii.gz",
-    "name": "Dataset1121_MICCAILabeled",
+    "name": "Dataset1221_MICCAILabeled",
     "labels": {
         "background": 0,
         "Upper Right Central Incisor": 1,

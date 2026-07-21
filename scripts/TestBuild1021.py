@@ -161,24 +161,24 @@ if __name__ ==  "__main__":
     input = "/home/data2/xrs/nnUNet_raw/"
     output = "/home/data2/xrs/nnUNet_raw/"
 
-    # input_ds = "Dataset1011_MICCAILabeled"
-    # output_ds = "Dataset1021_MICCAILabeled"
-    # process_ds(
-    #     root = input,
-    #     out_root = output,
-    #     input_ds = input_ds,
-    #     output_ds = output_ds,
-    #     mapping = mapping_DS621(),
-    #     image_link = input_ds,
-    # )
-
-    input_ds = "Dataset1111_MICCAIUnlabeled"
-    output_ds = "Dataset1121_MICCAIUnlabeled"
+    input_ds = "Dataset1011_MICCAIUnlabeled"
+    output_ds = "Dataset1021_MICCAIUnlabeled"
     process_ds(
         root = input,
         out_root = output,
         input_ds = input_ds,
         output_ds = output_ds,
         mapping = mapping_DS621(),
+        image_link = input_ds,
+    )
+
+    input_ds = "Dataset1111_MICCAIUnlabeled"
+    output_ds = "Dataset1116_MICCAIUnlabeled"
+    process_ds(
+        root = input,
+        out_root = output,
+        input_ds = input_ds,
+        output_ds = output_ds,
+        mapping = mapping_DS616(),
         image_link = input_ds,
     )
