@@ -278,6 +278,8 @@ def main(input_dir, output_dir, verbose = False):
 
         origin_props["spacing"] = infer_spacing
         origin_props["sitk_stuff"]["use_resample"] = use_resample
+
+        output_path = output_path.replace(".nii.gz", "_mask.nii.gz")
         write_seg(out_np, output_path, origin_props, is_reverse)
         if verbose:
             print(f"{file.name} time {(time.time() - start_time):.2f}s")

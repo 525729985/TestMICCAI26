@@ -30,6 +30,10 @@ nnUNetv2_extract_fingerprint -d 716
 nnUNetv2_plan_experiment -d 716
 nnUNetv2_preprocess -d 716 -c 3d_new
 nnUNetv2_train 716 3d_new 0 -tr nnUNetTrainer_250epochs
+
+nnUNetv2_predict -d 716 -f 0 -c 3d_new -tr nnUNetTrainer_250epochs -i /home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/Train-Unlabeled/imagesTr/ -o /home/data2/xrs/dataset/pred_out/pred_716/Train-Unlabeled250
+nnUNetv2_predict -d 621 -f 0 -c 3d_new -tr nnUNetTrainer_250epochs_NoMirroring -i /home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/Train-Unlabeled/imagesTr/ -o /home/data2/xrs/dataset/pred_out/pred_621/Train-Unlabeled250
+python scripts/TestBuildWater.py
 ```
 
 
@@ -55,6 +59,10 @@ nnUNetv2_extract_fingerprint -d 916
 nnUNetv2_plan_experiment -d 916
 nnUNetv2_preprocess -d 916 -c 3d_new
 nnUNetv2_train 916 3d_new 0 -tr nnUNetTrainer
+
+nnUNetv2_predict -d 916 -f 0 -c 3d_new -tr nnUNetTrainer -i /home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/Train-Unlabeled/imagesTr/ -o /home/data2/xrs/dataset/pred_out/pred_916/Train-Unlabeled1000
+nnUNetv2_predict -d 821 -f 0 -c 3d_new -tr nnUNetTrainer_DASegOrd0_NoMirroring -i /home/data2/xrs/dataset/MICCAI-Chllenge-STS26-Task1_S3/Train-Unlabeled/imagesTr/ -o /home/data2/xrs/dataset/pred_out/pred_821/Train-Unlabeled1000
+python scripts/TestBuildWater.py
 ```
 
 #### **Step 2: Train Unlabeled Spacing 1.0**

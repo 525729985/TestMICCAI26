@@ -232,6 +232,8 @@ def infer_step(input_path, output_path, predictor916, predictor821):
     ret821_np = infer_by_predictor(predictor821, img, props)
 
     out_np = seg_by_water(ret916_np, ret821_np, watershed_np, is_mirror_pulp = not is_reverse)
+
+    output_path = output_path.replace(".nii.gz", "_mask.nii.gz")
     write_seg(out_np, output_path, props, is_reverse)
 
 def main(input_dir, output_dir, verbose = False):

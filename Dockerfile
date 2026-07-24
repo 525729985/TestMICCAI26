@@ -3,10 +3,12 @@
 # Stage 1: Define Base Image and Environment
 # Use official PyTorch image. The versions can be adjusted by participants.
 ARG PYTORCH="2.5.1"
-ARG CUDA="12.4"
+ARG CUDA="12.1"
 ARG CUDNN="9"
+
 FROM pytorch/pytorch:${PYTORCH}-cuda${CUDA}-cudnn${CUDNN}-runtime
 # FROM registry.cn-hangzhou.aliyuncs.com/thisxu/pytorch:${PYTORCH}-cuda${CUDA}-cudnn${CUDNN}-runtime
+
 
 # Set environment variables for compilation (usually no need to change)
 ENV TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0 7.5 8.0 8.6+PTX" \

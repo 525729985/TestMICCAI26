@@ -79,22 +79,22 @@ def main(input_dir, output_dir, ref_dir = None, small_max_size = 0, processes = 
         _ = [job.get() for job in tqdm(jobs, desc = "Process Jobs")]
 
 if __name__ == "__main__":
-    # type_num1 = "250"
-    # type_num2 = "250"
-
-    # type = "Train-Unlabeled"
-    # input = f"/home/data2/xrs/dataset/pred_out/pred_716/{type}{type_num1}"
-    # output = f"/home/data2/xrs/dataset/pred_out/pred/{type}{type_num1}_{type_num2}"
-    # ref = f"/home/data2/xrs/dataset/pred_out/pred_621/{type}{type_num2}"
-    # main(input, output, ref, small_max_size = 3000, processes = 8)
-
-    type_num1 = "1000"
-    type_num2 = "1000"
+    type_num1 = "250"
+    type_num2 = "250"
 
     type = "Train-Unlabeled"
-    input = f"/home/data2/xrs/dataset/pred_out/pred_916/{type}{type_num1}"
-    output = f"/home/data2/xrs/dataset/pred_out/pred2/{type}{type_num1}_{type_num2}"
-    ref = f"/home/data2/xrs/dataset/pred_out/pred_821/{type}{type_num2}"
+    input = f"/home/data2/xrs/dataset/pred_out/pred_716/{type}{type_num1}"
+    output = f"/home/data2/xrs/dataset/pred_out/pred/{type}{type_num1}_{type_num2}"
+    ref = f"/home/data2/xrs/dataset/pred_out/pred_621/{type}{type_num2}"
     main(input, output, ref, small_max_size = 3000, processes = 8)
+
+    # type_num1 = "1000"
+    # type_num2 = "1000"
+    #
+    # type = "Train-Unlabeled"
+    # input = f"/home/data2/xrs/dataset/pred_out/pred_916/{type}{type_num1}"
+    # output = f"/home/data2/xrs/dataset/pred_out/pred2/{type}{type_num1}_{type_num2}"
+    # ref = f"/home/data2/xrs/dataset/pred_out/pred_821/{type}{type_num2}"
+    # main(input, output, ref, small_max_size = 3000, processes = 8)
 
     print("ok")
