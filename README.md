@@ -5,7 +5,7 @@
       --gpus all \
       --name thisxu \
       --rm \
-      -v "./input_folder":/inputs \
-      -v "/output_folder":/outputs \
+      -v "$(pwd)/input_folder":/inputs \
+      -v "$(pwd)/output_folder":/outputs \
       thisxu:latest
     ```
