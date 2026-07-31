@@ -182,5 +182,3 @@ if __name__ ==  "__main__":
         mapping = mapping_DS616(),
         image_link = input_ds,
     )
-
-

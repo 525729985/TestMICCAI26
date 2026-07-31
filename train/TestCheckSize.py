@@ -7,14 +7,7 @@ from tqdm import tqdm
 import SimpleITK as sitk
 from pathlib import Path
 
-def save_to_csv(names, datas, out_channels, csv_path = "output.csv"):
-    header = ["name"]
-    for i in out_channels:
-        header += [f"size_{i}_d", f"size_{i}_h", f"size_{i}_w"]
-    for i in range(1, 33):
-        header += [f"tooth_size_{i}_d", f"tooth_size_{i}_h", f"tooth_size_{i}_w"]
-    for i in range(1, 5):
-        header += [f"block_size_{i}_d", f"block_size_{i}_h", f"block_size_{i}_w"]
+def save_to_csv(names, header, datas, csv_path = "output.csv"):
     with open(csv_path, mode = "w", newline = "") as file:
         writer = csv.writer(file)
         writer.writerow(header)
@@ -74,7 +67,14 @@ def main(input_dir, output_dir = "./", processes = 8):
             name, data = job.get()
             names.append(name)
             datas.append(data)
-    save_to_csv(names, datas, out_channels, str(output_path / "size.csv"))
+    header = ["name"]
+    for i in out_channels:
+        header += [f"size_{i}_d", f"size_{i}_h", f"size_{i}_w"]
+    for i in range(1, 33):
+        header += [f"tooth_size_{i}_d", f"tooth_size_{i}_h", f"tooth_size_{i}_w"]
+    for i in range(1, 5):
+        header += [f"block_size_{i}_d", f"block_size_{i}_h", f"block_size_{i}_w"]
+    save_to_csv(names, header, datas, str(output_path / "size.csv"))
 if __name__ == "__main__":
     # label_path = "/home/data2/xrs/nnUNet_raw/Dataset611_MICCAILabeled/labelsTr/"
     # main(label_path)

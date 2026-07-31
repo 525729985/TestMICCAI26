@@ -1,8 +1,7 @@
-import multiprocessing as mp
 from concurrent.futures import ProcessPoolExecutor
 
-import numpy as np
 import cupy as cp
+import numpy as np
 import torch
 from pathlib import Path
 import time
@@ -82,7 +81,6 @@ def resample_image(
     image.SetOrigin(new_origin)
     return image
 
-
 def watershed_segmentation(mask, min_distance = 8):
     mask = cp.asarray(mask, dtype = cp.uint8)
     mask = mask > 0
@@ -111,9 +109,13 @@ def get_pulp_id(tooth_id, is_mirror = False, pulp_diff = 32):
     return pulp_id
 
 def seg_by_water(source_np, ref_np, watershed_np, is_mirror_pulp = False, count_bg = True):
+    source_np = cp.asarray(source_np)
+    ref_np = cp.asarray(ref_np)
+    watershed_np = cp.asarray(watershed_np)
+
     # watershed_np = watershed_segmentation(source_np)
-    labels = np.unique(watershed_np[watershed_np != 0])
-    out_seg = np.zeros_like(source_np, dtype = np.uint8)
+    labels = cp.unique(watershed_np[watershed_np != 0])
+    out_seg = cp.zeros_like(source_np, dtype = cp.uint8)
     source_mask = ref_np > 0
     for area_idx in labels:
         block_mask = watershed_np == area_idx
@@ -121,20 +123,20 @@ def seg_by_water(source_np, ref_np, watershed_np, is_mirror_pulp = False, count_
             block_mask &= source_mask
         out_id = 0
         if block_mask.size > 0:
-            ids, counts = np.unique(ref_np[block_mask], return_counts = True)
+            ids, counts = cp.unique(ref_np[block_mask], return_counts = True)
             out_id = ids[counts.argmax()]
         pulp_id = get_pulp_id(out_id, is_mirror = is_mirror_pulp)
-        out_seg[block_mask] = np.where(source_np[block_mask] == 1, out_id, pulp_id)
-    return out_seg
+        out_seg[block_mask] = cp.where(source_np[block_mask] == 1, out_id, pulp_id)
+    return out_seg.get()
 
-def read_image(file):
+def read_image(file, has_reverse = True):
     origin_itk = itk_image = sitk.ReadImage(file)
     original_size = itk_image.GetSize()
     original_spacing = itk_image.GetSpacing()
     original_origin = itk_image.GetOrigin()
     original_direction = itk_image.GetDirection()
 
-    is_reverse = itk_image.GetPixelID() == sitk.sitkFloat64
+    is_reverse = has_reverse and itk_image.GetPixelID() == sitk.sitkFloat64
     itk_image = sitk.Cast(itk_image, sitk.sitkInt16)
     itk_image = sitk.Clamp(itk_image, upperBound = 5000)
 
@@ -195,7 +197,7 @@ def init_predictors(cuda = 0):
         use_folds = (0,),
         checkpoint_name = "checkpoint_final.pth",
     )
-    
+
     predictor821 = nnUNetPredictor(
         tile_step_size = 0.5,
         use_gaussian = True,
@@ -207,7 +209,7 @@ def init_predictors(cuda = 0):
         allow_tqdm = True,
     )
     predictor821.initialize_from_trained_model_folder(
-        join(nnUNet_results, "Dataset1121_MICCAIUnlabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
+        join(nnUNet_results, "Dataset1221_MICCAIUnlabeled/nnUNetTrainer_DASegOrd0_NoMirroring__nnUNetPlans__3d_new"),
         use_folds=(0,),
         checkpoint_name="checkpoint_final.pth",
     )
@@ -253,42 +255,34 @@ def main(input_dir, output_dir, verbose = False):
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok = True, parents = True)
 
-    predictors = init_predictors()
+    predictor916, predictor821 = init_predictors()
     infer_spacing = (0.3, 0.3, 0.3)
 
-    with ProcessPoolExecutor(max_workers = 2, mp_context = mp.get_context("spawn")) as pool:
-        for file in input_dir.glob("*.nii.gz"):
-            start_time = time.time()
-            input_path = str(file)
-            output_path = str(output_dir / file.name)
-            itk_image, origin_props, is_reverse = read_image(input_path)
+    for file in input_dir.glob("*.nii.gz"):
+        start_time = time.time()
+        input_path = str(file)
+        output_path = str(output_dir / file.name)
+        itk_image, origin_props, is_reverse = read_image(input_path, has_reverse = True)
 
-            jobs = [
-                pool.submit(infer_by_predictor,
-                    predictor,
-                    idx,
-                    itk_image,
-                    infer_spacing,
-                )
-                for idx, predictor in enumerate(predictors)
-            ]
-            ret916_np, use_resample = jobs[0].result()
-            if verbose:
-                print(f"{file.name} time step0 {(time.time() - start_time):.2f}s")
-            watershed_np = watershed_segmentation(ret916_np)
-            if verbose:
-                print(f"{file.name} time step1 {(time.time() - start_time):.2f}s")
-            ret821_np, _ = jobs[1].result()
-            if verbose:
-                print(f"{file.name} time step2 {(time.time() - start_time):.2f}s")
+        ret916_np, use_resample = infer_by_predictor(predictor916, 0, itk_image, infer_spacing)
+        if verbose:
+            print(f"{file.name} time step0 {(time.time() - start_time):.2f}s")
+        watershed_np = watershed_segmentation(ret916_np)
+        if verbose:
+            print(f"{file.name} time step1 {(time.time() - start_time):.2f}s")
+        ret821_np, _ = infer_by_predictor(predictor821, 1, itk_image, infer_spacing)
+        if verbose:
+            print(f"{file.name} time step2 {(time.time() - start_time):.2f}s")
 
-            out_np = seg_by_water(ret916_np, ret821_np, watershed_np, is_mirror_pulp = not is_reverse)
+        out_np = seg_by_water(ret916_np, ret821_np, watershed_np, is_mirror_pulp = not is_reverse)
 
-            origin_props["spacing"] = infer_spacing
-            origin_props["sitk_stuff"]["use_resample"] = use_resample
-            write_seg(out_np, output_path, origin_props, is_reverse)
-            if verbose:
-                print(f"{file.name} time {(time.time() - start_time):.2f}s")
+        origin_props["spacing"] = infer_spacing
+        origin_props["sitk_stuff"]["use_resample"] = use_resample
+
+        output_path = output_path.replace(".nii.gz", "_mask.nii.gz")
+        write_seg(out_np, output_path, origin_props, is_reverse)
+        if verbose:
+            print(f"{file.name} time {(time.time() - start_time):.2f}s")
 
 if __name__ == "__main__":
     main(
