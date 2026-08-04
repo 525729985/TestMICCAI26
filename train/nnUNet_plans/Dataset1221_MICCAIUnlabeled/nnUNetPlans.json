@@ -352,6 +352,11 @@
                 "force_separate_z": false,
                 "memefficient_seg_resampling": false
             },
+            "patch_size": [
+                112,
+                128,
+                128
+            ],
             "batch_size": 2
         }
     },
